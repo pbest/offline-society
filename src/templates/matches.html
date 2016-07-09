@@ -1,0 +1,88 @@
+{#
+Matches
+----------------
+These are the matches for the thing
+#}
+
+{# Base Template #}
+{% set activeMenu = 'matches' %}
+{% extends '_base.html' %}
+
+{# Data #}
+{% set matches = [
+    {
+        'id': 459,
+        'first_name': 'John',
+        'last_name': 'Smith',
+        'avatar': 'https://randomuser.me/api/portraits/men/32.jpg',
+        'age': 27,
+        'words': 'Bold | Adventurous | Intelligent'
+    },
+    {
+        'id': 459,
+        'first_name': 'John',
+        'last_name': 'Smith',
+        'avatar': 'https://randomuser.me/api/portraits/men/39.jpg',
+        'age': 27,
+        'words': 'Bold | Adventurous | Intelligent'
+    },
+    {
+        'id': 459,
+        'first_name': 'John',
+        'last_name': 'Smith',
+        'avatar': 'https://randomuser.me/api/portraits/men/85.jpg',
+        'age': 27,
+        'words': 'Bold | Adventurous | Intelligent'
+    },
+    {
+        'id': 459,
+        'first_name': 'John',
+        'last_name': 'Smith',
+        'avatar': 'https://randomuser.me/api/portraits/men/17.jpg',
+        'age': 27,
+        'words': 'Bold | Adventurous | Intelligent'
+    },
+    {
+        'id': 459,
+        'first_name': 'John',
+        'last_name': 'Smith',
+        'avatar': 'https://randomuser.me/api/portraits/men/77.jpg',
+        'age': 27,
+        'words': 'Bold | Adventurous | Intelligent'
+    }
+] %}
+
+{# Page Content #}
+{% block content %}
+<div class="row">
+    {% set matchCount = 1 %}
+    <h1 class="matches-title">At an event, I'd like to bump into...</h1>
+    <div class="matches">
+
+       <div class="match match-center"><img src="img/beaker_placeholder.svg"></div>
+    {% for match in matches %}
+        <div class="match match-{{matchCount}}" id="match_{{match.id}}">
+            <img class="match-avatar" src="{{match.avatar}}">
+            <div class="match-details">
+                <div class="match-primaryDetails">
+                    <span class="match-firstName">{{match.first_name}}</span>
+                    <span class="match-age">{{match.age}}</span>
+                </div>
+                <div class="match-actions">
+                    <a class="match-action match-actionNo" href="#">No</a>
+                    <a class="match-action match-actionYes" href="#">Yes</a>
+                </div>
+            </div>
+        </div>
+        {% set matchCount = matchCount + 1 %}
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+{{ super() }}
+<script>
+    console.log('Hello, index');
+</script>
+{% endblock %}

@@ -1,0 +1,227 @@
+/* =================================================================
+                             LOGIN SCREEN
+====================================================================  */
+
+
+/*.login {
+  position: absolute;
+  max-width: 650px;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.login__form {
+  margin-top: 4rem;
+}
+
+.login__form input  {
+    margin: 1rem;
+  }
+
+.login__form input[type=submit],
+.login__form input[type=text],
+.login__form input[type=password] {
+     width: 100%;
+}
+
+.login__remember {
+  width: 100%;
+}
+
+.login__rememberCheck {
+  float: left;
+}
+
+.login__rememberLabel {
+  float: left;
+  margin-top: .5rem;
+}
+
+
+.login__logo .logo__image {
+  max-width: 300px;
+  padding-top: 80px;
+}*/
+
+
+body.login { 
+  background: #fff; 
+}
+
+#login {
+  padding: 5% 0 0;
+    -webkit-animation: fadeDown 0.5s ease-out; /* Safari 4+ */
+  -moz-animation:    fadeDown 0.5s ease-out; /* Fx 5+ */
+  -o-animation:      fadeDown 0.5s ease-out; /* Opera 12+ */
+  animation:         fadeDown 0.5s ease-out; /* IE 10+, Fx 29+ */
+}
+
+.login h1 a { 
+  background-image: url('../img/logo.png'); 
+  background-size: 264px 160px; 
+  width: 264px; 
+  height: 160px; 
+}
+
+#loginform, .login form {
+  box-shadow: none;
+}
+
+.submit {
+    margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: auto;
+  clear: both;
+}
+
+#wp-submit {
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+    @include transition(all, 0.2s, ease-in-out);
+    @include type__default;
+  //display: inline-block;
+  //height: 38px;
+   padding: 5px 35px;
+   color: $white;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: map-get($bodytype, bold);
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: $red;
+  border-radius: 0 0 0 0;
+  border: 2px solid $red;
+  cursor: pointer;
+  box-sizing: border-box; 
+  box-shadow: none;
+}
+
+#lostpasswordform .submit #wp-submit {
+  margin-top: 0px;
+}
+
+#backtoblog {
+ display: none;
+  top: 40px;
+  left: 40px;
+}
+
+.login form .input, .login input[type=text], .login input[type=password] {
+  background: #f7f7f7;
+  font-size: 1rem;
+  //height: 4rem;
+  padding: 1rem 1rem; /* The 6px vertically centers text on FF, ignored by Webkit */
+  //padding-bottom: 1.7rem;
+  background-color: #F7F7F7;
+  border: 2px solid #F7F7F7;
+  border-radius: 0px;
+  box-shadow: none;
+  color: $dark-gray;
+  box-sizing: border-box; 
+ // position: relative;
+ // top: -20px;
+  //z-index: 99999;
+}
+
+label[for=user_login], label[for=user_pass] {
+  color: $black;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 1px;
+  //position: relative;
+  //top: 20px;
+  //left: 20px;
+  z-index: 0;
+}
+
+.login #nav {
+  margin-top: -40px;
+  text-align: center;
+}
+
+.login #backtoblog a, .login #nav a {
+  color: $dark-gray;
+  &:hover{
+    color: $red;
+  }
+}
+
+
+.forgetmenot {
+  position: relative;
+  cursor: pointer;
+
+  [type="checkbox"] {
+    background: #ffffff;
+    border: 0;
+   }
+  
+
+  label,
+  label {
+    position: relative;
+    padding-left: 35px;
+    padding-top: 6px; 
+    cursor: pointer;
+    color: $dark-gray;
+  }
+
+  [type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked {
+    //position: absolute;
+    //left: -9999px;
+    //opacity: 0;
+  }
+
+  /* checkbox aspect */
+  [type="checkbox"]:before {
+    content: '';
+    position: absolute;
+    left:0; 
+    top: 2px;
+    width: 31px; 
+    height: 31px;
+    background: #f7f7f7;
+    border-radius: 50%;
+    color: rgba($white,.7);
+    font-size: 11px;
+    padding-left: 10px;
+    padding-top: 3px;
+    transform: scale(.80);
+     transition: all .2s;
+  }
+
+  [type="checkbox"]:checked:before {
+    content:'\002713';
+    color: rgba($white,.7);
+    width: 31px; 
+    height: 31px;
+    font-family: "SSStandard" !important;
+    background: $red;
+    opacity: 1;
+    padding-left: 0px;
+    padding-top: 10px;
+    font-size: 11px;  
+    transition: all .2s;
+    transform: scale(1);
+  }
+}
+
+.login .message {
+   background: #eff5f8;
+  border: 1px solid #2078aa;
+  line-height: 1.35;
+  margin-top: 20px;
+  padding: .5rem 1rem;
+  display: inline-block;
+  color: rgba(32, 120, 170,1);
+}

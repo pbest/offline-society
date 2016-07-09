@@ -1,0 +1,981 @@
+.gform_body, .gform_footer {
+  max-width: 900px;
+}
+
+#gform_wrapper_1 {
+  margin-top: 2.5rem;
+}
+
+#gform_1 {
+  max-width: 700px;
+}
+
+.gform_fields {
+  list-style: none;
+}
+
+.gfield {
+  margin-bottom: 2rem;
+  overflow: auto;
+}
+
+.field {
+  position: relative;
+}
+
+.field label {
+  position: absolute;
+  top: .75rem;
+  left: 2rem;
+}
+
+.gfield_label, .field label{
+    //font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    color: $red;
+    margin-bottom: 0;
+  }
+
+.gfield-50 {
+  float: left;
+  width: 50%;
+}
+
+.gform_page_footer {
+  //width: 70%;
+  clear: both;
+  margin-top: 4rem;
+  //margin: 0 auto;
+}
+
+.gfield_required {
+  display: none;
+}
+
+.ginput_container .large {
+  width: 100%;
+}
+
+.gfield_checkbox, .gfield_radio {
+
+  list-style: none;
+
+  li label, li input {
+    float: left;
+  }
+}
+
+.gform_hidden {
+  margin: 0;
+  padding: 0;
+}
+
+
+.form__50 .ginput_container {
+     @include grid-nested;
+
+  .ginput_left, .ginput_right {
+    @include span(50);
+  }
+}
+
+
+/*
+Red Label inset into all text inputs
+------------------------------------------------------------- */
+.label-float {
+  position: relative;
+
+  .ginput_container span {
+    position: relative;
+  }
+
+  input[type=text], input[type=tel] {
+    margin-bottom: 1px;
+  }
+}
+
+.label-float label {
+  @include transition(all, 0.2s, ease-in-out);
+  position: absolute;
+  top: .75rem;
+  left: 2rem;
+  //opacity: .5;
+  color: $red;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+label.curFocus {
+  @include transition(all, 0.2s, ease-in-out);
+  color: $red !important;
+  //opacity: 1;
+}
+
+/* Form Validation
+----------------------------------------------------------- */
+.gfield_error {
+  position: relative;
+}
+
+.validation_message{
+  background: #eff5f8;
+  border: 1px solid #2078aa;
+
+  padding: .5rem 1rem;
+  display: inline-block;
+  color: rgba(32, 120, 170,1);
+    position: absolute;
+  z-index: 999999;
+  top: 0;
+  right: 0;
+  display: inline-block;
+   -webkit-animation: fadeRight 0.35s ease-out; /* Safari 4+ */
+  -moz-animation:    fadeRight 0.35s ease-out; /* Fx 5+ */
+  -o-animation:      fadeRight 0.35s ease-out; /* Opera 12+ */
+  animation:         fadeRight 0.35s ease-out; /* IE 10+, Fx 29+ */
+}
+
+.validation_message:after, .validation_message:before {
+  right: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.validation_message:after {
+ border-color: rgba(239, 245, 248, 0);
+  border-right-color: #eff5f8;
+  border-width: 7px;
+  margin-top: -7px;
+}
+.validation_message:before {
+  border-color: rgba(32, 120, 170, 0);
+  border-right-color: #186d9d;
+  border-width: 8px;
+  margin-top: -8px;
+}
+.validation_error {
+  display: none;
+}
+
+
+/*
+-------------------------------------------------
+USER REGISTRATION FORM
+------------------------------------------------- */
+#gform_submit_button_1 {
+    //float: right;
+    margin-right: 2.5%;
+    //margin-left: 5%;
+    width: 100%;
+  }
+
+
+/*
+-------------------------------------------------
+MEMBERSHIP APPLICATION FORM
+------------------------------------------------- */
+#gform_wrapper_4 {
+  //margin-top: -1rem;
+}
+
+//buttons
+.gform_next_button {
+  //float: right;
+}
+
+.gform_save_link {
+  //float: left;
+}
+
+#gform_submit_button_4 {
+  background: $red;
+  color: $white;
+  border-color: $red;
+}
+
+#gform_4 .gform_body {
+  width: 75%;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  @media screen and (max-width:767px) {
+    width: 100%;
+
+    li {
+      margin-left: 0;
+    }
+  }
+}
+
+.gform_previous_button {
+  margin-left: 20px;
+}
+
+
+.name_first input, .name_last input {
+  width: 100%;
+}
+
+.name_first, .name_last {
+  float: left;
+  width: 50%;
+  @media screen and (max-width:767px) {
+    width: 100%;
+  }
+  //@include span(50);
+}
+
+label.gfield_label[for=input_1_3_3],label.gfield_label[for=input_1_2] {
+  display: none;
+}
+
+.name_first {
+  margin-bottom: 2rem;
+  @media screen and (min-width:768px) {
+    padding-right: 2rem;
+    margin-bottom: 0;
+  }
+}
+
+.name-last {
+  padding-left: 50px;
+}
+
+.gfield-50 .datepicker {
+  padding-right: 50px;
+}
+
+.datepicker {
+  width: 100%;
+}
+
+.ginput_left, .ginput_right {
+  float: left;
+  width: 50%;
+  @media screen and (max-width:767px) {
+    width: 100%;
+  }
+}
+
+.ginput_left  {
+  padding-right: 2rem;
+  input {
+    width: 100%;
+  }
+  @media screen and (max-width:767px) {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+.ginput_right input {
+  width: 100%;
+}
+
+
+/* Steps : Page Progress / Current page indicator
+--------------------------------------------------------- */
+
+.gf_page_steps {
+  width: 96%;
+  max-width: 1240px;
+
+  &:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+}
+
+.gf_step_number {
+  display: none;
+}
+
+
+.gf_step {
+  float: left;
+  width: 25%;
+  color: #ccc;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+
+  @media screen and (max-width:767px) {
+    width: 33%;
+  }
+}
+
+#gf_step_4_4 {
+  @media screen and (max-width:767px) {
+    width: 0;
+  }
+
+}
+
+.gf_step_clear {
+   display: inline-block;
+}
+
+.gf_step_clear:after {
+   visibility: hidden;
+   display: block;
+   font-size: 0;
+   content: " ";
+   clear: both;
+   height: 0;
+}
+
+.gf_step_first {
+  text-align: left;
+
+  .gf_step_circle {
+    left: 0;
+  }
+}
+
+.gf_step_last {
+
+  .gf_step_label {
+    border-bottom: 0;
+  }
+}
+
+.gf_step_label { // outer wrapper of step label info
+  display: block;
+  position: relative;
+  padding-bottom: .5rem;
+  border-bottom: 3px solid $gray;
+}
+
+.gf_step_active {
+  color: $red;
+
+  .gf_step_name {
+     color: $red;
+  }
+}
+
+.gf_step_name { // step label
+  display: block;
+  margin-top: -0.5rem;
+  padding-bottom: .5rem;
+  font-family: map-get($bodytype, font-family);
+  font-weight: map-get($bodytype, bold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  @media screen and (max-width:767px) {
+    display: none;
+  }
+}
+
+.gf_step_account {
+  margin-left: -23px;
+}
+
+.gf_step_relationship {
+  margin-left: -70px;
+}
+
+.gf_step_basic_info {
+  margin-left: -30px;
+}
+
+.gf_step_submit {
+   margin-left: -15px;
+}
+
+.gf_step_icons i {
+  font-size: 1.25rem;
+}
+
+.gf_step_circle { // circles below the steps
+  display: block;
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: $gray;
+}
+
+.gf_step_completed .gf_step_label {
+  border-bottom: 3px solid $red; // Bottom border of steps
+}
+
+.gf_step_completed .gf_step_circle, .gf_step_active .gf_step_circle {
+  background: $red; // red circles below the steps
+}
+
+.gf_step_completed {
+  //color: $red; // Color of completed steps
+}
+
+.gf_step_completed_indicator {
+  opacity: 0;
+  display: none;
+  color: $green;
+  margin-left: 4px;
+}
+
+.gf_step_completed .gf_step_completed_indicator {
+  display: inline;
+    opacity: 1; // Green check mark
+}
+
+/* Page 1 - Account
+------------------------------------------------- */
+#field_4_10 { //date wrapper
+  position: relative;
+  width: 50%;
+  float: left;
+  .ginput_container label {  //date sub-labels
+    display: none;
+  }
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
+}
+#field_4_12 {
+  @media screen and (max-width: 767px) {
+    clear: both;
+  }
+}
+
+#field_4_10 > label {
+  position: absolute;
+  top: .5rem;
+  left: 2rem;
+}
+
+#input_4_10 { // Birthday field
+  .ginput_container {
+    float: left;
+    width: 31%;
+
+    @media screen and (max-width:767px) {
+      width: 33%;
+    }
+
+    input {
+      width: 100%;
+
+      &:focus, &:active {
+        border-color: #f7f7f7;
+      }
+    }
+    &:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+  }
+}
+
+#input_4_10_1 { //month
+  padding-right: 1rem;
+}
+
+#input_4_10_2 { //dat
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+
+#input_4_10_3 { //year
+ padding-left: .5rem;
+
+}
+
+/* Page 2 - Dating Preferences
+------------------------------------------------- */
+#gform_page_4_2 {
+
+  .gfield {
+    width: 50%;
+    float: left;
+    @media screen and (max-width:767px) {
+      width: 100%;
+    }
+  }
+
+  .gfield_label {
+    //font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: .75rem;
+    color: $red;
+    margin-bottom: 0;
+    @media screen and (max-width:767px) {
+      font-size: 1rem;
+    }
+  }
+
+  #field_4_20 {
+    width: 75%;
+    margin-top: 15px;
+  }
+}
+
+.gfield_checkbox li {
+  margin-right: 3rem;
+}
+
+
+.form__optionalLabel {
+  color: $red-gray;
+}
+
+/* Page 3 - Basic Info
+------------------------------------------------- */
+#gform_page_4_3 {
+input[type=text], input[type=tel] {
+    width: 75%;
+    margin-bottom: 1px;
+  }
+}
+
+/* Page 4 - Submit
+------------------------------------------------- */
+.radio-button .ginput_price {
+    display: none;
+}
+
+#field_4_31 label {
+  display: none;
+}
+
+#input_4_22_1 {
+  width: 100%;
+}
+
+#input_4_22_5 {
+  width: 100%;
+}
+
+#input_4_22_1_label, #input_4_22_5_label {
+  @include transition(all, 0.2s, ease-in-out);
+  position: relative;
+  top: 3rem;
+  left: 1rem;
+  color: $red;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.ginput_cardinfo_left {
+  float: left;
+  width: 30%;
+  background-color: #F7F7F7;
+  margin-top: 20px;
+
+  @media screen and (max-width:767px) {
+    width: 40%;
+  }
+}
+
+.ginput_cardinfo_right {
+  position: relative;
+  padding-left: 4rem;
+  width: 70%;
+  float: left;
+  text-align: right;
+  margin-top: 2rem;
+}
+
+.ginput_cardinfo_right:after {
+   visibility: hidden;
+   display: block;
+   font-size: 0;
+   content: " ";
+   clear: both;
+   height: 0;
+  }
+
+ label[for=input_4_22_2_month] {
+  color: $red;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1px;
+  position: relative;
+  top: 10px;
+  left: 14px;
+ }
+
+ .ginput_card_expiration {
+  width: 45%;
+ }
+
+.gcolumn-50 {
+  width: 50%;
+  float: left;
+}
+
+
+#gform_fields_4_3, #gform_fields_4_3_column-2 {
+  width: 100%;
+  overflow: auto;
+
+  .gfield {
+    width: 50%;
+    float: left;
+    @media screen and (max-width:767px) {
+      width: 100% !important;
+    }
+  }
+}
+
+#input_4_32 {
+  li {
+    margin-bottom: 10px;
+  }
+
+  label {
+    font-size: 1.35rem;
+  }
+
+  .ginput_price {
+    display: none;
+  }
+}
+
+#field_4_30, #field_4_22 {
+  overflow: hidden;
+}
+
+.ginput_total {
+  color: $green;
+  font-size: 2rem;
+}
+
+#field_4_33 label {
+  left: 1.3rem;
+  top: 45px;
+  font-size: 10px;
+  @media screen and (max-width: 767px) {
+    top: 7px;
+    left: 16px;
+  }
+}
+
+// Coupon section
+#field_4_33 {
+  float: left;
+  width: 35%;
+  padding-top: 40px;
+
+  @media screen and (max-width: 767px) {
+    @include span(100);
+    padding: 0;
+  }
+}
+
+#gf_coupon_code_4 {
+  //padding: 1.75rem;
+  //padding-left: 1.45rem;
+  //padding-top: 2.75rem;
+  width: 62%;
+  padding: 2rem 1.25rem .9rem 1.45rem;
+  @media screen and (max-width:767px) {
+   // width: 50%;
+  }
+}
+
+.gform_wrapper input#gf_coupon_button.button {
+  height: 4.5rem;
+  margin-top: 0;
+  margin-left: 0 !important;
+  position: relative;
+  top: -8px;
+  padding-left: .95rem;
+  padding-right: .95rem;
+  font-size: 12px;
+ }
+
+.gform_wrapper #gf_coupon_info .gf_coupon_item td {
+  border-bottom: 0px !important;
+}
+
+ .gform_card_icon_container {
+    display: none;
+ }
+
+// price options
+.gfield_price {
+  width: 65%;
+  float: left;
+}
+
+// price field
+#field_4_30 {
+  clear: both;
+  width: 100%;
+}
+
+// credit card
+label[for=input_4_22_1] {
+ //display: none;
+}
+
+#input_4_22 .ginput_full {
+  display: block;
+}
+
+label.gfield_label[for=input_4_22_1] {
+  display: none;
+}
+
+#input_4_22_2_container {
+  &:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+}
+
+#gform_submit_button_4 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+//expiration date
+.ginput_card_expiration {
+  height: 45px;
+}
+
+
+#input_4_22_2_cardinfo_right label {
+  position: absolute;
+  right: 16%;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #EB4147;
+  text-transform: uppercase;
+  font-size: 12px;
+  top: 7px;
+}
+
+#field_4_46 {
+  margin-bottom: -30px;
+  color: #ccc;
+}
+
+#gform_previous_button_4 {
+  margin-left: 0;
+}
+#gform_previous_button_4_6 {
+  position: relative;
+  left: -20px;
+}
+
+/* Pretty Radio Options
+------------------------------------------------- */
+.field__radio {
+  position: relative;
+  cursor: pointer;
+
+  li {
+    display: block;
+    width: 100%;
+    clear: both;
+    margin-bottom: 3px;
+    overflow: auto;
+  }
+
+  [type="radio"]:not(:checked) + label,
+  [type="radio"]:checked + label {
+    position: relative;
+    padding-left: 40px;
+    padding-top: 3px;
+    cursor: pointer;
+    color: $dark-gray;
+    transition: all .2s;
+    &:hover {
+      color: $black;
+      transition: all .2s;
+    }
+  }
+
+  [type="radio"]:not(:checked),
+  [type="radio"]:checked {
+    position: absolute;
+    left: -9999px;
+  }
+
+  /* checkbox aspect */
+  [type="radio"]:not(:checked) + label:before,
+  [type="radio"]:checked + label:before,
+   {
+    content: '';
+    position: absolute;
+    left:0; top: 2px;
+    width: 31px; height: 31px;
+    background: #f7f7f7;
+    border-radius: 50%;
+    color: rgba($white,.7);
+    font-size: 11px;
+    padding-left: 10px;
+    padding-top: 3px;
+    transform: scale(.80);
+    transition: all .2s;
+    @media screen and (max-width: 767px) {
+      padding-top: 5px;
+    }
+  }
+
+  [type="radio"]:checked + label:before {
+    content:'\002713';
+    //color: $white;
+    font-family: "SSStandard" !important;
+    background: $red;
+    opacity: 1;
+    transition: all .2s;
+    transform: scale(1);
+  }
+}
+
+/* "Other" option for "How Did you hear about us?" section
+-------------------------------------------------------- */
+#choice_4_41_4:not(:checked) + #input_4_41_other,
+#choice_4_41_4:checked + #input_4_41_other
+{
+    padding: 2rem;
+}
+
+#choice_4_41_4:checked + #input_4_41_other
+{
+  border-color: $red;
+}
+
+/* Pretty Checkbox Options
+------------------------------------------------- */
+.field__checkbox {
+  position: relative;
+  cursor: pointer;
+
+  li {
+    display: block;
+    width: 100%;
+    clear: both;
+    margin-bottom: 3px;
+    overflow: auto;
+  }
+
+  [type="checkbox"]:not(:checked) + label,
+  [type="checkbox"]:checked + label {
+    position: relative;
+    padding-left: 40px;
+    padding-top: 3px;
+    cursor: pointer;
+    color: $dark-gray;
+  }
+
+  [type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked {
+    position: absolute;
+    left: -9999px;
+  }
+
+  /* checkbox aspect */
+  [type="checkbox"]:not(:checked) + label:before,
+  [type="checkbox"]:checked + label:before {
+    content: '';
+    position: absolute;
+    left:0; top: 2px;
+    width: 31px; height: 31px;
+    background: #f7f7f7;
+    border-radius: 50%;
+    color: rgba($white,.7);
+    font-size: 11px;
+    padding-left: 10px;
+    padding-top: 3px;
+    transform: scale(.80);
+    transition: all .2s;
+     @media screen and (max-width: 767px) {
+      padding-top: 5px;
+    }
+  }
+
+  [type="checkbox"]:checked + label:before {
+    content:'\002713';
+    //color: $white;
+    font-family: "SSStandard" !important;
+    background: $red;
+    opacity: 1;
+    transition: all .2s;
+    transform: scale(1);
+  }
+
+}
+
+/* Pretty Toggle
+------------------------------------------------- */
+.field__toggle {
+  li {
+    display: inline-block;
+    width: 75px;
+    padding: 2px;
+    border: 3px solid #f7f7f7;
+    border-radius: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  li input[type="checkbox"] {
+    display: none;
+  }
+  li input[type="checkbox"]:checked + label {
+    margin-left: 0;
+    background: $red;
+  }
+  li label {
+    width: 23px;
+    height: 23px;
+    background: $red-gray;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin-left: 37px;
+    margin-top: 4px;
+    transition: all 0.3s ease;
+  }
+  li label::before {
+    content: "No";
+    color: $dark-gray;
+    top: 3px;
+    left: -30px;
+  }
+  li label::after {
+    content: "Yes";
+    color: $dark-gray;
+    right: -30px;
+  }
+  li label::before,
+  li label::after {
+    position: absolute;
+    display: inline-block;
+    width: 28px;
+    text-align: center;
+    line-height: 18px;
+  }
+}

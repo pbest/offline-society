@@ -1,0 +1,191 @@
+.matches {
+    position: relative;
+    //top: 15rem;
+    width: 32em;
+    height: 32em;
+    padding: 2.8em; /*= 2em * 1.4 (2em = half the width of an img, 1.4 = sqrt(2))*/
+    //border: dashed 1px;
+    border-radius: 50%;
+    //margin: 1.75em auto 0;
+}
+
+.matches-title {
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+}
+
+.match {
+    display: block;
+    //overflow: hidden;
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 12em;
+    height: 12em;
+    margin: -3.5em; /* 2em = 4em/2 */ /* half the width */
+}
+
+.match-center {
+    //border: solid 2px rgba($red,.95);
+    //background: rgba($red,.10);
+    width: 9em;
+    height: 9em;
+    // border-radius: 50%;
+    padding: 1em;
+    line-height: 1.4;
+    text-align: center;
+    font-weight: map-get($headingtype, light);
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/*
+Match 1
+--------------------------------------------------------------------------------------------------------
+*/
+@keyframes match-1 {
+  0% {
+    transform: none;
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(-25deg) translate(10.4em) rotate(25deg);
+    opacity: 1;
+  }
+}
+.match-1 {
+    opacity: 0;
+    animation-name: match-1;
+    animation-delay: 100ms;
+    animation-delay: 500ms;
+    animation-duration: 250ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+/*
+Match 2
+--------------------------------------------------------------------------------------------------------
+*/
+@keyframes match-2 {
+  0% {
+    transform: none;
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(45deg) translate(9.4em) rotate(-45deg);
+    opacity: 1;
+  }
+}
+.match-2 {
+    opacity: 0;
+    animation-name: match-2;
+    animation-delay: 500ms;
+    animation-duration: 450ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+/*
+Match 3
+--------------------------------------------------------------------------------------------------------
+*/
+@keyframes match-3 {
+  0% {
+    transform: none;
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(133deg) translate(10.5em) rotate(-133deg);
+    opacity: 1;
+  }
+}
+.match-3 {
+    opacity: 0;
+    animation-name: match-3;
+    animation-delay: 500ms;
+    animation-duration: 450ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+/*
+Match 4
+--------------------------------------------------------------------------------------------------------
+*/
+@keyframes match-4 {
+  0% {
+    transform: none;
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(19deg) translate(-12.4em) rotate(-19deg);
+    opacity: 1;
+  }
+}
+.match-4 {
+    opacity: 0;
+    animation-name: match-4;
+    animation-delay: 500ms;
+    animation-duration: 450ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+/*
+Match 5
+--------------------------------------------------------------------------------------------------------
+*/
+@keyframes match-5 {
+  0% {
+    transform: none;
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(260deg) translate(12em) rotate(-260deg);
+    opacity: 1;
+  }
+}
+.match-5 {
+    opacity: 0;
+    animation-name: match-5;
+    animation-delay: 500ms;
+    animation-fill-mode: forwards;
+    animation-duration: 450ms;
+    animation-timing-function: ease-out;
+}
+
+
+
+
+.match-avatar {
+    display: block;
+    width: 80%;
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid $gray;
+    transition: all 250ms ease-out;
+     //box-shadow: 0 0 20px rgba($black,.1);
+    &:hover {
+        cursor: pointer;
+        //border: 2px solid $red;
+        box-shadow: 0 0 20px rgba($black,.3);
+        //transform: scale(1.2);
+        transition: all 250ms ease-out;
+    }
+}
+
+.match-details {
+    display: none;
+}
+
+.match-open {
+    display: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+}

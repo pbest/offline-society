@@ -1,0 +1,29 @@
+{#
+EVENTS
+----------------
+These are the matches for the thing
+#}
+
+{# Base Template #}
+{% set activeMenu = 'events' %}
+{% extends '_base.html' %}
+
+{# Data #}
+{% set events = [
+    {
+    }
+] %}
+
+{# Page Content #}
+{% block content %}
+<div class="row">
+    <h1>Events</h1>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+{{ super() }}
+<script>
+    console.log('Hello, index');
+</script>
+{% endblock %}

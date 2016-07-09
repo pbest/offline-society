@@ -1,0 +1,23 @@
+{
+  "extends": "stylelint-config-standard",
+  "plugins": [
+    "stylelint-selector-bem-pattern"
+  ],
+  "rules": {
+    "indentation": 4,
+    "max-empty-lines": 2,
+    "no-browser-hacks",
+    "no-unsupported-browser-features": [ true, {
+      browsers: "last 2 versions, Firefox ESR, not ie <= 10"
+    } ],
+    "property-no-vendor-prefix": true,
+    "rule-nested-empty-line-before":  [ "always-multi-line", {
+      except: ["first-nested"],
+      ignore: ["after-comment"]
+    } ],
+    "selector-bem-pattern": {
+      "preset": "bem"
+    },
+    "string-quotes": "single"
+  }
+}

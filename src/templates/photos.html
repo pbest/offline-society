@@ -1,0 +1,29 @@
+{#
+PHOTOS
+----------------
+These are the matches for the thing
+#}
+
+{# Base Template #}
+{% set activeMenu = 'photos' %}
+{% extends '_base.html' %}
+
+{# Data #}
+{% set photos = [
+    {
+    }
+] %}
+
+{# Page Content #}
+{% block content %}
+<div class="row">
+    <h1>Memories from our events</h1>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+{{ super() }}
+<script>
+    console.log('Hello, index');
+</script>
+{% endblock %}

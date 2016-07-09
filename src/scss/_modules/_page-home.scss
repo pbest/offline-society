@@ -1,0 +1,145 @@
+ /* =================================================================
+                             HOMEPAGE
+==================================================================== */
+
+/* 
+  Landing Area
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+ .landing {
+  width:100%;
+  height:100%;
+  position: absolute;
+  z-index: 100;
+}
+
+.landing__block {
+  width: 50%;
+  
+  float: left;
+  text-align: center;
+  position: relative;
+  @media screen and (max-width:1023px) {
+    width: 100%;
+  }
+  @media screen and (min-width:1024px) {
+    height: 100%;
+  }
+}
+
+.landing__center {
+  @media screen and (min-width: 1024px) {
+    position: absolute;
+    top: 47%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+  }
+}
+
+.landing__photo {
+  background-image: url('../img/homepage_placeholder.jpg');
+  background-size: 105%,50%;
+}
+
+.landing__video {
+  overflow: hidden;
+  background-color: #ccc;
+}
+
+.full_video {
+  @media screen and (min-width:1023px) {
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+}
+}
+
+.landing__logo {
+  width: 53%;
+  max-width: 384px;
+  @media screen and (max-width:1023px) {
+    margin-top: 3rem;
+  }
+}
+
+.landing__taglineBlock {
+  margin-top: 4rem;
+  @media screen and (max-width:1023px) {
+    margin-top: 2rem;
+    padding-bottom: 4rem;
+  }
+
+}
+
+.landing__tagline {
+  font-weight: 300;
+  font-size: 1.75rem;
+  text-align: left;
+  margin-bottom: 4rem;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 65%;
+  @media screen and (max-width:1023px) {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    max-width: 75%;
+  }
+}
+
+.landing__taglinesubLink {
+  color: $dark-gray;
+  margin-top: 1rem;
+ display: inline-block;
+ padding-left: 7px;
+ padding-right: 7px; 
+}
+
+/* 
+
+  Nav Off Canvas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.home {
+  
+  .nav-main {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .nav-item a {
+     color: #ccc;
+     font-size: 12px;
+     opacity: 0;
+     @media screen and (max-width:767px) {
+      opacity: 1;
+      color: $white;
+     }
+  }
+
+  .nav .btn-secondary {
+    @media screen and (min-width: 1024px) {
+      border-color: $white;
+      color: $white;
+      background: rgba($white,.05);
+    }
+
+    &:hover {
+      border-color: $red;
+      color: $red;
+    }
+  }
+
+  .usr__name {
+    color: $white;
+  }
+}
