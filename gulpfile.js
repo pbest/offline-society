@@ -36,8 +36,48 @@ const CONFIG = require('./config').get()
 const COMPATIBILITY = ['last 2 versions', 'Firefox ESR', 'not ie <= 10']  // see https://github.com/ai/browserslist#queries
 const EXTRAS_GLOB = 'src/**/*.{txt,json,xml,ico,jpeg,jpg,png,gif,svg,ttf,otf,eot,woff,woff2}'
 
+/*
+-------------------------------------------------------------------------------------------------
+Asset Locations:
+*/
+const source_Base = 'src/static_src/'
+const build_Base  = 'public/static/'
+const prod_Base   = 'dist/'
+
+/*
+-------------------------------------------------------------------------------------------------
+Config Parameters
+*/
+let config = {
+  // SASS
+  sass: {
+    src:          source_Base + 'scss/**/*.scss',
+    build:        build_Base + 'css/',
+    watch:        source_Base + 'sscss/**/*.scss',
+    includePaths: ['node_modules/foundation-sites/scss']
+  },
+  // Javascript
+  js: {
+    src:   source_Base + 'js/app.js',
+    build: build_Base + 'js/',
+  },
+  // Images
+  img: {
+    src:   source_Base + 'js/app.js',
+    build: build_Base + 'js/',
+  },
+  nunjucks: {
+    src: ['src/templates/**/*.html', '!**/_*'],
+    build: build_Base
+  }
+}
+
+/*
+-------------------------------------------------------------------------------------------------
+Tasks
+*/
 let bundler = browserify({ entry: true, debug: true })
-  .add('src/js/app.js')
+  .add(config.js.src)
   .transform('eslintify', { continuous: true })
   .transform('babelify')
   .transform(envify(CONFIG))
@@ -55,11 +95,11 @@ function bundle() {
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(sourcemaps.write())
     .on('error', handleErrors)
-    .pipe(gulp.dest('public/js/'))
+    .pipe(gulp.dest(config.js.build))
 }
 
 gulp.task('clean', () => {
-  return del('public/')
+  return del(source_Base)
 })
 
 gulp.task('browserify', () => {
@@ -82,7 +122,7 @@ gulp.task('watchify', () => {
 SASS -- Build stylesheets
 */
 gulp.task('sass', () => {
-  return gulp.src('src/scss/**/*.scss')
+  return gulp.src(config.sass.src)
     .pipe(plumber())
     .pipe(stylelint({
       syntax: 'scss',
@@ -91,14 +131,14 @@ gulp.task('sass', () => {
     }))
     .pipe(sourcemaps.init())
     .pipe(sass({
-      includePaths: ['node_modules/foundation-sites/scss']
+      includePaths: config.sass.includePaths
     }))
     .pipe(postcss([autoprefixer({
       browsers: COMPATIBILITY
     })]))
     .pipe(sourcemaps.write())
     .pipe(plumber.stop())
-    .pipe(gulp.dest('public/css/'))
+    .pipe(gulp.dest(config.sass.build))
 })
 
 /*
@@ -106,13 +146,13 @@ gulp.task('sass', () => {
 Nunjucks -- Compile markup templates
 */
 gulp.task('nunjucks', () => {
-  return gulp.src(['src/templates/**/*.html', '!**/_*'])
+  return gulp.src(config.nunjucks.src)
     .pipe(plumber())
     .pipe(nunjucks.compile(CONFIG, {
       throwOnUndefined: true
     }))
     .pipe(plumber.stop())
-    .pipe(gulp.dest('public/'))
+    .pipe(gulp.dest(config.nunjucks.build))
 })
 
 /*
