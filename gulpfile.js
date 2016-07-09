@@ -38,11 +38,19 @@ const EXTRAS_GLOB = 'src/**/*.{txt,json,xml,ico,jpeg,jpg,png,gif,svg,ttf,otf,eot
 
 /*
 -------------------------------------------------------------------------------------------------
-Asset Locations:
+Base Locations:
 */
-const source_Base = 'src/static_src/'
-const build_Base  = 'public/static/'
-const prod_Base   = 'dist/'
+let base = {
+  src:      'src/',
+  build:    'public/',
+  dist:     'dist/',
+  // for all them static files:
+  staticAssets: {
+    src:    'src/static/',
+    build:  'public/static/',
+    dist:   'dist/static/'
+  }
+}
 
 /*
 -------------------------------------------------------------------------------------------------
@@ -51,24 +59,24 @@ Config Parameters
 let config = {
   // SASS
   sass: {
-    src:          source_Base + 'scss/**/*.scss',
-    build:        build_Base + 'css/',
-    watch:        source_Base + 'sscss/**/*.scss',
+    src:          base.staticAssets.src + 'scss/**/*.scss',
+    build:        base.staticAssets.build + 'css/',
+    watch:        base.staticAssets.src + 'sscss/**/*.scss',
     includePaths: ['node_modules/foundation-sites/scss']
   },
   // Javascript
   js: {
-    src:   source_Base + 'js/app.js',
-    build: build_Base + 'js/',
+    src:   base.staticAssets.src + 'js/app.js',
+    build: base.staticAssets.build + 'js/'
   },
   // Images
   img: {
-    src:   source_Base + 'js/app.js',
-    build: build_Base + 'js/',
+    src:   base.staticAssets.src + 'js/app.js',
+    build: base.staticAssets.build + 'js/'
   },
   nunjucks: {
     src: ['src/templates/**/*.html', '!**/_*'],
-    build: build_Base
+    build: base.build
   }
 }
 
@@ -99,7 +107,7 @@ function bundle() {
 }
 
 gulp.task('clean', () => {
-  return del(source_Base)
+  return del(base.build)
 })
 
 gulp.task('browserify', () => {

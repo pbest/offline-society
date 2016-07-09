@@ -1,0 +1,124 @@
+{#
+Matches
+----------------
+These are the matches for the thing
+#}
+
+{# Base Template #}
+
+{% extends '_base.html' %}
+
+
+{# Page Content #}
+{% block content %}
+<h1>Preferences</h1>
+<div class="account-wrapper">
+
+<div class="row">
+
+    <div class="large-6 small-12 columns">
+      <div class="field mb1">
+        <label for="first_name">Email</label>
+        <input type="text" name="first_name" id="first_name" value="apbest@gmail.com" aria-label="First name" tabindex="2">
+      </div>
+      <div class="field mb1">
+        <label for="first_name">First Name</label>
+        <input type="text" name="first_name" id="first_name" value="Paul" aria-label="First name" tabindex="2">
+      </div>
+      <div class="field mb1">
+        <label for="first_name">Last Name</label>
+        <input type="text" name="first_name" id="first_name" value="Best" aria-label="First name" tabindex="2">
+      </div>
+    </div>
+    <div class="large-6 columns">
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="field large-12 columns">
+        <label for="first_name">Update Password</label>
+        <input type="text" name="first_name" id="first_name" value="" aria-label="First name" tabindex="2">
+    </div>
+</div>
+
+<div class="row">
+    <div class="field large-6 small-12 columns">
+        <label for="first_name">Phone Number</label>
+        <input type="text" name="first_name" id="first_name" value="" aria-label="First name" tabindex="2">
+    </div>
+    <div class="field large-6 small-12 columns">
+        <label for="first_name">Birthday</label>
+        <input type="text" name="first_name" id="first_name" value="" aria-label="First name" tabindex="2">
+    </div>
+</div>
+
+<div class="row">
+    <div class="large-6 small-12 columns">
+        <label for="gender">Gender</label>
+        <input type="radio" name="group1" value="Milk">Male
+        <input type="radio" name="group1" value="Butter">Female
+    </div>
+    <div class="large-6 small-12 columns">
+        <label for="gender">I'm Interested in</label>
+        <input type="checkbox" name="group1" value="Milk">Guys
+        <input type="checkbox" name="group1" value="Butter">Gals
+    </div>
+</div>
+
+<div class="row">
+    <div class="field large-12 columns">
+        <label for="first_name">How'd you hear about us?</label>
+        <input type="text" name="first_name" id="first_name" value="" aria-label="First name" tabindex="2">
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="field large-12 columns">
+    <a class="btn btn-primary" href="#">Save</a>
+    </div>
+</div>
+<!--
+ <ul class="gform_fields top_label form_sublabel_below description_below">
+    <li id="field_4_1" class="gfield gfield_error label-float gfield_contains_required field_sublabel_above field_description_above"><label class="gfield_label" for="input_4_1_3">Name<span class="gfield_required">*</span></label><div class="ginput_complex ginput_container no_prefix has_first_name no_middle_name has_last_name no_suffix" id="input_4_1">
+
+                            <span id="input_4_1_3_container" class="name_first">
+                                                    <label for="input_4_1_3">First Name</label>
+                                                    <input type="text" name="input_1.3" id="input_4_1_3" value="" aria-label="First name" tabindex="2" style="cursor: auto; background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; background-repeat: no-repeat;">
+                                                </span>
+
+                            <span id="input_4_1_6_container" class="name_last">
+                                                            <label for="input_4_1_6">Last Name</label>
+                                                            <input type="text" name="input_1.6" id="input_4_1_6" value="" aria-label="Last name" tabindex="4">
+                                                        </span>
+
+                        </div><div class="gfield_description validation_message">This field is required.</div></li><li id="field_4_34" class="gfield gfield_error label-float gfield_contains_required field_sublabel_below field_description_below"><label class="gfield_label" for="input_4_34">Phone Number<span class="gfield_required">*</span></label><div class="ginput_container"><input name="input_34" id="input_4_34" type="tel" value="" class="large" tabindex="6"><div class="instruction validation_message">Phone format: (###) ###-####</div></div><div class="gfield_description validation_message">This field is required.</div></li><li id="field_4_25" class="gfield gfield_error label-float gfield_contains_required field_sublabel_below field_description_below"><label class="gfield_label" for="input_4_25">Email<span class="gfield_required">*</span></label><div class="ginput_container">
+                            <input name="input_25" id="input_4_25" type="email" value="" class="large" tabindex="7">
+                        </div><div class="gfield_description validation_message">The username can not be empty</div></li><li id="field_4_27" class="gfield gform_hidden field_sublabel_below field_description_below"><input name="input_27" id="input_4_27" type="hidden" class="gform_hidden" value=""></li><li id="field_4_36" class="gfield gcolumn-50 gfield_contains_required field_sublabel_below field_description_below"><label class="gfield_label">Gender<span class="gfield_required">*</span></label><div class="ginput_container"><ul class="gfield_radio" id="input_4_36"><li class="gchoice_4_36_0"><input name="input_36" type="radio" value="Male" checked="checked" id="choice_4_36_0" tabindex="8"><label for="choice_4_36_0" id="label_4_36_0">Male</label></li><li class="gchoice_4_36_1"><input name="input_36" type="radio" value="Female" id="choice_4_36_1" tabindex="9"><label for="choice_4_36_1" id="label_4_36_1">Female</label></li></ul></div></li><li id="field_4_10" class="gfield gfield_error gcolumn-50 gfield_contains_required field_sublabel_below field_description_below"><label class="gfield_label" for="input_4_10_1">Birthday<span class="gfield_required">*</span></label><div id="input_4_10" class="ginput_container"><div class="clear-multi"><div class="gfield_date_month ginput_container" id="input_4_10_1_container">
+                                            <input type="number" maxlength="2" name="input_10[]" id="input_4_10_1" value="" tabindex="10" placeholder="Month" min="1" max="12" step="1">
+                                            <label for="input_4_10_1">MM</label>
+                                        </div><div class="gfield_date_day ginput_container" id="input_4_10_2_container">
+                                            <input type="number" maxlength="2" name="input_10[]" id="input_4_10_2" value="" tabindex="11" placeholder="Day" min="1" max="31" step="1">
+                                            <label for="input_4_10_2">DD</label>
+                                        </div><div class="gfield_date_year ginput_container" id="input_4_10_3_container">
+                                            <input type="number" maxlength="4" name="input_10[]" id="input_4_10_3" value="" tabindex="12" placeholder="Year" min="1920" max="2017" step="1">
+                                            <label for="input_4_10_3">YYYY</label>
+                                       </div>
+                                   </div></div><div class="gfield_description validation_message">This field is required.</div></li><li id="field_4_55" class="gfield gfield_error gcolumn-50 gfield_contains_required field_sublabel_below field_description_below"><label class="gfield_label">I'm Interested In:<span class="gfield_required">*</span></label><div class="ginput_container"><ul class="gfield_checkbox" id="input_4_55"><li class="gchoice_4_55_1">
+                                <input name="input_55.1" type="checkbox" value="Guys" id="choice_4_55_1" tabindex="13">
+                                <label for="choice_4_55_1" id="label_4_55_1">Guys</label>
+                            </li><li class="gchoice_4_55_2">
+                                <input name="input_55.2" type="checkbox" value="Gals" id="choice_4_55_2" tabindex="14">
+                                <label for="choice_4_55_2" id="label_4_55_2">Gals</label>
+                            </li></ul></div><div class="gfield_description validation_message">This field is required.</div></li><li id="field_4_56" class="gfield gfield_error gcolumn-50 gfield_contains_required field_sublabel_below field_description_below"><label class="gfield_label" for="input_4_56">How'd you hear about us?<span class="gfield_required">*</span></label><div class="ginput_container"><input name="input_56" id="input_4_56" type="text" value="" class="large" tabindex="15"></div><div class="gfield_description validation_message">This field is required.</div></li><li id="field_4_54" class="gfield gfield_error gfield_contains_required field_sublabel_below field_description_below"><label class="gfield_label" for="input_4_54">Your Profile Photo<span class="gfield_required">*</span></label><div class="ginput_container"><input type="hidden" name="MAX_FILE_SIZE" value="2097152"><input name="input_54" id="input_4_54" type="file" class="medium" aria-describedby="extensions_message" tabindex="16"><span id="extensions_message" class="screen-reader-text">Accepted file types: jpg, gif, png, jpeg.</span></div><div class="gfield_description">Pictures should be square and in jpg, jpeg or png format. </div><div class="gfield_description validation_message">This field is required.</div></li><li id="field_4_26" class="gfield gform_hidden field_sublabel_below field_description_below"><input name="input_26" id="input_4_26" type="hidden" class="gform_hidden" value=""></li>
+                            </ul>-->
+</div>
+{% endblock %}
+
+{% block javascripts %}
+{{ super() }}
+<script>
+    console.log('Hello, index');
+</script>
+{% endblock %}
