@@ -1,76 +1,137 @@
-{#
-Matches
-----------------
-These are the matches for the thing
-#}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>offlinesociety</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon-precomposed" href="/favicon-152.png">
 
-{# Base Template #}
-{% set activeMenu = 'user' %}
-{% extends '_base.html' %}
+        
+        <meta property="og:title" content="" />
+        <meta property="og:site_name" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:description" content="" />
+        <meta property="fb:app_id" content="">
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="" />
+
+        
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="">
+        <meta name="twitter:creator" content="">
+        <meta name="twitter:title" content="">
+        <meta name="twitter:description" content="">
+        <meta name="twitter:image" content="">
+
+        
+        <script src="//use.typekit.net/orf6ofm.js"></script>
+        <script>try{Typekit.load();}catch(e){}</script>
+
+        
+        <link rel="preload" href="static/css/app.css" as="style" onload="this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/css/app.css"></noscript>
+
+        
+        <script src="static/js/bundle.js" async defer></script>
+    </head>
 
 
-{# Page Content #}
-{% block content %}
-<h1>Preferences</h1>
+    <body>
+        
+        
+        
+
+
+
+
+
+
+
+<!-- Site Header –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<header class="header">
+
+    <div class="logo">
+        <a class="logo__link" href="/" rel="home">
+            <img class="logo__image" src="static/img/logo.png">
+        </a>
+    </div>
+
+    <nav id="nav-main" class="nav-main" role="navigation">
+    <!-- Main Menu
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <div class="mobileHandle"><i class="ss-rows"></i></div>
+        <ul class="nav">
+            
+            <li class="nav-item ">
+                <a class="nav-link" href="events.html">Events</a>
+            </li>
+            
+            <li class="nav-item ">
+                <a class="nav-link" href="curation.html">Curation</a>
+            </li>
+            
+            <li class="nav-item ">
+                <a class="nav-link" href="photos.html">Photos</a>
+            </li>
+            
+
+
+            
+            
+            
+                <li class="cta usr">
+                  <a class="usr__btn btn btn-transparent" href="#">
+                        <img class="usr__avatar" src="static/img/avatar.jpg">
+                        <span class="usr__name">Paul</span>
+                        <i class="usr__menuIcon icon--navigate-down red"></i>
+                </a>
+                <ul class="usr__dropdown">
+                    <li class="usr__dropdownItem"><a href="./settings.html">Settings</a>
+                    <li class="usr__dropdownItem"><a href="#">Logout</a>
+                </ul>
+                </li>
+            
+            <li class="mobileClose"><i class="ss-close"></i></li>
+            <div class="clearfix"></div>
+        </ul>
+        <div class="clearfix"></div>
+    </nav><!-- #nav -->
+</header>
+<div class="clearfix"></div>
+
+
+        
+
+        
+        <div class="content-wrapper animatedWrapper">
+        
 <div class="account-wrapper">
 
 <div class="row">
 
-    <div class="large-6 small-12 columns">
-      <div class="field mb1">
-        <label for="first_name">Email</label>
-        <input type="text" name="first_name" id="first_name" value="apbest@gmail.com" aria-label="First name" tabindex="2">
-      </div>
-      <div class="field mb1">
-        <label for="first_name">First Name</label>
-        <input type="text" name="first_name" id="first_name" value="Paul" aria-label="First name" tabindex="2">
-      </div>
-      <div class="field mb1">
-        <label for="first_name">Last Name</label>
-        <input type="text" name="first_name" id="first_name" value="Best" aria-label="First name" tabindex="2">
-      </div>
+    <ul class="accordion" data-accordion>
+  <li class="accordion-item is-active" data-accordion-item>
+    <a href="#" class="accordion-title">Account</a>
+    <div class="accordion-content" data-tab-content>
+      I would start in the open state, due to using the `is-active` state class.
     </div>
-    <div class="large-6 columns">
-
+  </li>
+  <li class="accordion-item" data-accordion-item>
+    <a href="#" class="accordion-title">Preferences</a>
+    <div class="accordion-content" data-tab-content>
+      I would start in the open state, due to using the `is-active` state class.
     </div>
-</div>
-
-<div class="row">
-    <div class="field large-12 columns">
-        <label for="first_name">Update Password</label>
-        <input type="text" name="first_name" id="first_name" value="" aria-label="First name" tabindex="2">
+  </li>
+  <li class="accordion-item" data-accordion-item>
+    <a href="#" class="accordion-title">Membership</a>
+    <div class="accordion-content" data-tab-content>
+      I would start in the open state, due to using the `is-active` state class.
     </div>
-</div>
-
-<div class="row">
-    <div class="field large-6 small-12 columns">
-        <label for="first_name">Phone Number</label>
-        <input type="text" name="first_name" id="first_name" value="" aria-label="First name" tabindex="2">
-    </div>
-    <div class="field large-6 small-12 columns">
-        <label for="first_name">Birthday</label>
-        <input type="text" name="first_name" id="first_name" value="" aria-label="First name" tabindex="2">
-    </div>
-</div>
-
-<div class="row">
-    <div class="large-6 small-12 columns">
-        <label for="gender">Gender</label>
-        <input type="radio" name="group1" value="Milk">Male
-        <input type="radio" name="group1" value="Butter">Female
-    </div>
-    <div class="large-6 small-12 columns">
-        <label for="gender">I'm Interested in</label>
-        <input type="checkbox" name="group1" value="Milk">Guys
-        <input type="checkbox" name="group1" value="Butter">Gals
-    </div>
-</div>
-
-<div class="row">
-    <div class="field large-12 columns">
-        <label for="first_name">How'd you hear about us?</label>
-        <input type="text" name="first_name" id="first_name" value="" aria-label="First name" tabindex="2">
-    </div>
+  </li>
+  <!-- ... -->
+</ul>
 </div>
 
 
@@ -114,11 +175,35 @@ These are the matches for the thing
                             </li></ul></div><div class="gfield_description validation_message">This field is required.</div></li><li id="field_4_56" class="gfield gfield_error gcolumn-50 gfield_contains_required field_sublabel_below field_description_below"><label class="gfield_label" for="input_4_56">How'd you hear about us?<span class="gfield_required">*</span></label><div class="ginput_container"><input name="input_56" id="input_4_56" type="text" value="" class="large" tabindex="15"></div><div class="gfield_description validation_message">This field is required.</div></li><li id="field_4_54" class="gfield gfield_error gfield_contains_required field_sublabel_below field_description_below"><label class="gfield_label" for="input_4_54">Your Profile Photo<span class="gfield_required">*</span></label><div class="ginput_container"><input type="hidden" name="MAX_FILE_SIZE" value="2097152"><input name="input_54" id="input_4_54" type="file" class="medium" aria-describedby="extensions_message" tabindex="16"><span id="extensions_message" class="screen-reader-text">Accepted file types: jpg, gif, png, jpeg.</span></div><div class="gfield_description">Pictures should be square and in jpg, jpeg or png format. </div><div class="gfield_description validation_message">This field is required.</div></li><li id="field_4_26" class="gfield gform_hidden field_sublabel_below field_description_below"><input name="input_26" id="input_4_26" type="hidden" class="gform_hidden" value=""></li>
                             </ul>-->
 </div>
-{% endblock %}
 
-{% block javascripts %}
-{{ super() }}
+        </div>
+
+
+        
+        
+
+        
 <script>
     console.log('Hello, index');
 </script>
-{% endblock %}
+
+
+        
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "Organization",
+                "name": "",
+                "url": "",
+                "logo": "",
+                "sameAs": [
+                    
+                    
+                    
+                    
+                    
+                ]
+            }
+        </script>
+    </body>
+</html>

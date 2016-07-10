@@ -29,8 +29,12 @@ const header = require('gulp-header')
 const runSequence = require('run-sequence')
 const notify = require("gulp-notify")
 const fs = require('fs')
+const iconfont         = require('gulp-iconfont');
+const iconfontCss      = require('gulp-iconfont-css');
+
 const handleErrors = require('./gulp/util/handleErrors')
 
+const PROJECT_NAME = 'offline-society'
 const BANNER = fs.readFileSync('banner.txt', 'utf8').replace('@date', (new Date()))
 const CONFIG = require('./config').get()
 const COMPATIBILITY = ['last 2 versions', 'Firefox ESR', 'not ie <= 10']  // see https://github.com/ai/browserslist#queries
@@ -60,23 +64,22 @@ let config = {
   // SASS
   sass: {
     src:          base.staticAssets.src + 'scss/**/*.scss',
+    watch:        base.staticAssets.src + 'scss/**/*.scss',
     build:        base.staticAssets.build + 'css/',
-    watch:        base.staticAssets.src + 'sscss/**/*.scss',
+    dist:         base.staticAssets.dist + 'css/',
     includePaths: ['node_modules/foundation-sites/scss']
   },
   // Javascript
   js: {
     src:   base.staticAssets.src + 'js/app.js',
-    build: base.staticAssets.build + 'js/'
-  },
-  // Images
-  img: {
-    src:   base.staticAssets.src + 'js/app.js',
-    build: base.staticAssets.build + 'js/'
+    build: base.staticAssets.build + 'js/',
+    dist:  base.staticAssets.dist + 'js/'
   },
   nunjucks: {
     src: ['src/templates/**/*.html', '!**/_*'],
-    build: base.build
+    watch: 'src/templates/**/*.html',
+    build: base.build,
+    dist: base.dist + 'templates'
   }
 }
 
@@ -108,6 +111,7 @@ function bundle() {
 
 gulp.task('clean', () => {
   return del(base.build)
+  return del(base.dist)
 })
 
 gulp.task('browserify', () => {
@@ -147,6 +151,64 @@ gulp.task('sass', () => {
     .pipe(sourcemaps.write())
     .pipe(plumber.stop())
     .pipe(gulp.dest(config.sass.build))
+    .pipe(gulp.dest(config.sass.dist))
+    .pipe( notify({
+      message: "Generated file: <%= file.relative %>"
+    }));
+})
+
+
+/*
+-------------------------------------------------------------------------------------------------
+Generate Icon font
+*/
+
+let icon_config = {
+  // name of icon font
+  name:       PROJECT_NAME,
+  // Path of the raw icons (as SVG)
+  src:        base.staticAssets.src + 'icons/*.svg',
+  // Set the base of "icons" folder. Without it, the template goes to weird places (cant leave src)
+  base:       base.staticAssets.src,
+  // This is where the icon-font gulp pipe spits the webfont files
+  fontDest:   base.staticAssets.build + 'fonts/',
+  // Path where the SCSS file should be saved,
+  // IMPORTANT: This is relative to the font destination (fontDest)
+  sassOutput: '../../../src/static/scss/_base/_icons.scss',
+  // Path of fonts, relative to CSS (not scss) (eg, this is where @font-face points)
+  fontPath:   '../fonts/',
+  // Basis of the icons' class in CSS
+  className:  'icon',
+  // The template path for generating the stylesheet (we use scss)
+  template:   'gulp/util/_iconFont-template.scss',
+  // Files to watch for changes to re-generate the icon font
+  watch:      base.staticAssets.src + 'icons/*.svg'
+}
+
+gulp.task('iconfont', () => {
+   const runTimestamp     = Math.round(Date.now()/1000);
+
+   return gulp.src(icon_config.src ,{base: icon_config.base})
+    .pipe(iconfontCss({
+      fontName: icon_config.name,              // The name of the generated font family (required). Has to be identical to iconfont's fontName option.
+      path: icon_config.template,             // The template path for stylesheet (we use scss)
+      targetPath: icon_config.sassOutput,     // The path where the (S)CSS file should be saved, relative to the path used in gulp.dest()
+                                              // Depending on the path, it might be necessary to set the base option, see https://github.com/backflip/gulp-iconfont-css/issues/16.
+      fontPath: icon_config.fontPath,         // Directory of font files relative to generated (S)CSS file (optional, defaults to ./)
+      className: icon_config.className        // Name of the generated CSS class/placeholder. Used for mixins and functions, too
+    }))
+    .pipe(iconfont({
+      fontName: icon_config.name,
+      appendUnicode: false,
+      formats: ['ttf', 'eot', 'woff','woff2','svg'], // default, 'woff2' and 'svg' are available
+      timestamp: runTimestamp // recommended to get consistent builds when watching files
+     }))
+    .on('error', handleErrors)
+    .pipe(gulp.dest(icon_config.fontDest))
+    .pipe( notify({
+          title: "Icon font built",
+          message: "Generated icon font: " + icon_config.name
+        }));
 })
 
 /*
@@ -161,6 +223,7 @@ gulp.task('nunjucks', () => {
     }))
     .pipe(plumber.stop())
     .pipe(gulp.dest(config.nunjucks.build))
+    .pipe(gulp.dest(config.nunjucks.dist))
 })
 
 /*
@@ -169,7 +232,7 @@ Extras -- Move arbitrary files from source to public
 */
 gulp.task('extras', () => {
   return gulp.src(EXTRAS_GLOB)
-    .pipe(gulp.dest('public/'))
+    .pipe(gulp.dest(base.build))
 })
 
 /*
@@ -271,7 +334,7 @@ gulp.task('minify:js', () => {
 Workflow Tasks:
 */
 gulp.task('build', (done) => {
-  runSequence('clean', ['browserify', 'nunjucks', 'sass', 'extras'], 'critical', done)
+  runSequence('clean', ['browserify', 'nunjucks', 'iconfont', 'sass', 'extras'], 'critical', done)
 })
 
 gulp.task('build:production', (done) => {
@@ -285,8 +348,9 @@ gulp.task('watch', ['watchify'], () => {
     files: 'public/**/*'
   })
 
-  gulp.watch('src/scss/**/*.scss', ['sass'])
-  gulp.watch('src/**/*.html', ['nunjucks'])
+  gulp.watch(config.sass.watch, ['sass'])
+  gulp.watch(icon_config.watch, ['iconfont'])
+  gulp.watch(config.nunjucks.watch, ['nunjucks'])
   gulp.watch(EXTRAS_GLOB, ['extras'])
 })
 

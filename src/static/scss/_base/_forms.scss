@@ -92,6 +92,7 @@ label > .label-body {
   width: 100%;
 }
 
+
 .field label {
   position: absolute;
   top: .75rem;
@@ -102,4 +103,73 @@ label > .label-body {
   font-size: 12px;
   color: $red;
   margin-bottom: 0;
+}
+
+/* Pretty Checkbox Options
+------------------------------------------------- */
+.field__checkbox {
+  position: relative;
+  cursor: pointer;
+
+  li {
+    display: block;
+    width: 100%;
+    clear: both;
+    margin-bottom: 3px;
+    overflow: auto;
+  }
+
+  [type="checkbox"]:not(:checked) + label,
+  [type="checkbox"]:checked + label {
+    position: relative;
+    padding-left: 40px;
+    padding-top: 3px;
+    cursor: pointer;
+    color: $dark-gray;
+  }
+
+  [type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked {
+    position: absolute;
+    left: -9999px;
+  }
+
+  /* checkbox aspect */
+  [type="checkbox"]:not(:checked) + label:before,
+  [type="checkbox"]:checked + label:before {
+    content: '';
+    position: absolute;
+    left:0; top: 2px;
+    width: 31px; height: 31px;
+    background: #f7f7f7;
+    border-radius: 50%;
+    color: rgba($white,.7);
+    font-size: 11px;
+    padding-left: 10px;
+    padding-top: 3px;
+    transform: scale(.80);
+    transition: all .2s;
+     @media screen and (max-width: 767px) {
+      padding-top: 5px;
+    }
+  }
+
+  [type="checkbox"]:checked + label:before {
+    content:'\002713';
+    //color: $white;
+    font-family: "SSStandard" !important;
+    background: $red;
+    opacity: 1;
+    transition: all .2s;
+    transform: scale(1);
+  }
+
+}
+
+
+.field__inline {
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    color: $dark-gray !important;
 }

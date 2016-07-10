@@ -40,7 +40,9 @@
 
     <body>
         {# Site Header #}
+        {% block header %}
         {% include "_header.html" %}
+        {% endblock %}
 
         {# Page Body #}
         <div class="content-wrapper animatedWrapper">

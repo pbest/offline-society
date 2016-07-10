@@ -5,72 +5,37 @@ These are the matches for the thing
 #}
 
 {# Base Template #}
-{% set activeMenu = 'user' %}
+
 {% extends '_base.html' %}
 
 
 {# Page Content #}
 {% block content %}
-<h1>Preferences</h1>
 <div class="account-wrapper">
 
 <div class="row">
 
-    <div class="large-6 small-12 columns">
-      <div class="field mb1">
-        <label for="first_name">Email</label>
-        <input type="text" name="first_name" id="first_name" value="apbest@gmail.com" aria-label="First name" tabindex="2">
-      </div>
-      <div class="field mb1">
-        <label for="first_name">First Name</label>
-        <input type="text" name="first_name" id="first_name" value="Paul" aria-label="First name" tabindex="2">
-      </div>
-      <div class="field mb1">
-        <label for="first_name">Last Name</label>
-        <input type="text" name="first_name" id="first_name" value="Best" aria-label="First name" tabindex="2">
-      </div>
+    <ul class="accordion" data-accordion>
+  <li class="accordion-item is-active" data-accordion-item>
+    <a href="#" class="accordion-title">Account</a>
+    <div class="accordion-content" data-tab-content>
+      I would start in the open state, due to using the `is-active` state class.
     </div>
-    <div class="large-6 columns">
-
+  </li>
+  <li class="accordion-item" data-accordion-item>
+    <a href="#" class="accordion-title">Preferences</a>
+    <div class="accordion-content" data-tab-content>
+      I would start in the open state, due to using the `is-active` state class.
     </div>
-</div>
-
-<div class="row">
-    <div class="field large-12 columns">
-        <label for="first_name">Update Password</label>
-        <input type="text" name="first_name" id="first_name" value="" aria-label="First name" tabindex="2">
+  </li>
+  <li class="accordion-item" data-accordion-item>
+    <a href="#" class="accordion-title">Membership</a>
+    <div class="accordion-content" data-tab-content>
+      I would start in the open state, due to using the `is-active` state class.
     </div>
-</div>
-
-<div class="row">
-    <div class="field large-6 small-12 columns">
-        <label for="first_name">Phone Number</label>
-        <input type="text" name="first_name" id="first_name" value="" aria-label="First name" tabindex="2">
-    </div>
-    <div class="field large-6 small-12 columns">
-        <label for="first_name">Birthday</label>
-        <input type="text" name="first_name" id="first_name" value="" aria-label="First name" tabindex="2">
-    </div>
-</div>
-
-<div class="row">
-    <div class="large-6 small-12 columns">
-        <label for="gender">Gender</label>
-        <input type="radio" name="group1" value="Milk">Male
-        <input type="radio" name="group1" value="Butter">Female
-    </div>
-    <div class="large-6 small-12 columns">
-        <label for="gender">I'm Interested in</label>
-        <input type="checkbox" name="group1" value="Milk">Guys
-        <input type="checkbox" name="group1" value="Butter">Gals
-    </div>
-</div>
-
-<div class="row">
-    <div class="field large-12 columns">
-        <label for="first_name">How'd you hear about us?</label>
-        <input type="text" name="first_name" id="first_name" value="" aria-label="First name" tabindex="2">
-    </div>
+  </li>
+  <!-- ... -->
+</ul>
 </div>
 
 

@@ -7,8 +7,8 @@
     },
     {
         'title': 'Curation',
-        'slug': 'matches',
-        'url': 'matches.html'
+        'slug': 'curation',
+        'url': 'curation.html'
     },
     {
         'title': 'Photos',
@@ -17,7 +17,7 @@
     }
 ] %}
 
-{# Remove this to see how the site works for non-logged in users#}
+{# Remove this to see how the site works for non-logged in users #}
 {% set user = {
     'first_name': 'Paul',
     'last_name': 'Best',
@@ -26,11 +26,12 @@
 } %}
 
 
+
 <!-- Site Header –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <header class="header">
 
     <div class="logo">
-        <a class="logo__link" href="#" rel="home">
+        <a class="logo__link" href="/" rel="home">
             <img class="logo__image" src="static/img/logo.png">
         </a>
     </div>
@@ -54,20 +55,20 @@
                   <a class="usr__btn btn btn-transparent" href="#">
                         <img class="usr__avatar" src="{{user.avatar}}">
                         <span class="usr__name">{{user.first_name}}</span>
-                        <i class="usr__menuIcon ss-icon ss-navigatedown red"></i>
+                        <i class="usr__menuIcon icon--navigate-down red"></i>
                 </a>
                 <ul class="usr__dropdown">
-                    <li class="usr__dropdownItem"><a href="./account.html">Profile Settings</a>
+                    <li class="usr__dropdownItem"><a href="./settings.html">Settings</a>
                     <li class="usr__dropdownItem"><a href="#">Logout</a>
                 </ul>
                 </li>
             {% else %}
             {# Non-Member : you mean nothing to me! #}
             <li class="cta">
-                <a class="btn btn-primary btn-join" href="./join/">Join US</a>
+                <a class="btn btn-primary btn-join" href="">Join US</a>
             </li>
             <li class="cta">
-                <a class="btn btn-secondary btn-signin" href="./signin/">Sign In</a>
+                <a class="btn btn-secondary btn-signin" href="login.html">Sign In</a>
             </li>
             {% endif %}
             <li class="mobileClose"><i class="ss-close"></i></li>

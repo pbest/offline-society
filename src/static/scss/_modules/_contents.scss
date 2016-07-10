@@ -3,7 +3,7 @@
 }
 
 .content-wrapper {
-  @include prefix(30);
+  @include prefix(28);
   margin-right: 40px;
   @media screen and (max-width:1023px) {
     @include prefix(17);
@@ -11,6 +11,11 @@
   @media screen and (max-width: 767px) {
    margin-left: 50px;
   }
+}
+
+.page-title {
+    margin-top: -5rem;
+    margin-bottom: 1rem;
 }
 
 .smallGray {

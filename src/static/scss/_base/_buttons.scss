@@ -10,7 +10,7 @@ input[type="button"],
   @include type__default;
   display: inline-block;
   //height: 38px;
-  padding: 5px 35px;
+  padding: 3px 35px;
   color: $black;
   text-align: center;
   font-size: 1rem;
@@ -21,10 +21,10 @@ input[type="button"],
   text-decoration: none;
   white-space: nowrap;
   background-color: transparent;
-  border-radius: 0;
+  border-radius: 2px;
   border: 2px solid $gray;
   cursor: pointer;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 
 }
 
@@ -42,7 +42,7 @@ input[type="button"]:focus {
   @include transition(all, 0.2s, ease-in-out);
   color: $red;
   border-color: $red;
-  outline: 0; 
+  outline: 0;
 }
 
 .btn.btn-primary,
@@ -58,7 +58,7 @@ input[type="button"].btn-primary {
 .gform_next_button {
   color: $white !important;
   background-color: $red !important;
-  border-color: $red !important; 
+  border-color: $red !important;
   margin-right: 20px;
 }
 
@@ -74,7 +74,7 @@ input[type="reset"].btn-primary:focus,
 input[type="button"].btn-primary:focus {
   color: $white;
   background-color: $red-1;
-  border-color: $red-1; 
+  border-color: $red-1;
 }
 
 .btn.btn-transparent {

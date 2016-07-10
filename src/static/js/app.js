@@ -1,4 +1,4 @@
-import $ from 'jquery'
+/*import $ from 'jquery'
 // import 'foundation'
 // import 'foundation-mediaquery'
 
@@ -23,4 +23,7 @@ var matchOpen == false;
 
     //$(this).toggleClass('handleOpen');
   });
-});
+});*/
+import PhotoSwipe from photoswipe
+new PhotoSwipe()
+console.log('Im here')

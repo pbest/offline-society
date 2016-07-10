@@ -6,58 +6,58 @@ These are the matches for the thing
 
 {% set galleries = [
     {
-        'title': 'Man vs. Machine: Taking it Offline with the Co-Founder of Priceline.com',
+        'title': 'This is an event name',
         'thumbnail': 'https://offlinesociety.com/wp-content/uploads/2015/06/nSgE_bw-62.jpg',
         'photo_count': '45',
-        'url': 'gallery.html'
-    },
-    {
-        'title': 'Stiff Drinks, Hijinks and Hidden Spaces',
-        'thumbnail': 'https://offlinesociety.com/wp-content/uploads/2015/06/nSgE_bw-62.jpg',
-        'photo_count': '45',
-        'url': 'gallery.html'
-    },
-    {
-        'title': 'Gilt City x Offline Society Present: Dating in the District',
-        'thumbnail': 'https://offlinesociety.com/wp-content/uploads/2015/06/nSgE_bw-62.jpg',
-        'photo_count': '45',
-        'url': 'gallery.html'
+        'url': '#'
     },
     {
         'title': 'This is an event name',
         'thumbnail': 'https://offlinesociety.com/wp-content/uploads/2015/06/nSgE_bw-62.jpg',
         'photo_count': '45',
-        'url': 'gallery.html'
+        'url': '#'
     },
     {
         'title': 'This is an event name',
         'thumbnail': 'https://offlinesociety.com/wp-content/uploads/2015/06/nSgE_bw-62.jpg',
         'photo_count': '45',
-        'url': 'gallery.html'
+        'url': '#'
     },
     {
         'title': 'This is an event name',
         'thumbnail': 'https://offlinesociety.com/wp-content/uploads/2015/06/nSgE_bw-62.jpg',
         'photo_count': '45',
-        'url': 'gallery.html'
+        'url': '#'
     },
     {
         'title': 'This is an event name',
         'thumbnail': 'https://offlinesociety.com/wp-content/uploads/2015/06/nSgE_bw-62.jpg',
         'photo_count': '45',
-        'url': 'gallery.html'
+        'url': '#'
     },
     {
         'title': 'This is an event name',
         'thumbnail': 'https://offlinesociety.com/wp-content/uploads/2015/06/nSgE_bw-62.jpg',
         'photo_count': '45',
-        'url': 'gallery.html'
+        'url': '#'
+    },
+    {
+        'title': 'This is an event name',
+        'thumbnail': 'https://offlinesociety.com/wp-content/uploads/2015/06/nSgE_bw-62.jpg',
+        'photo_count': '45',
+        'url': '#'
+    },
+    {
+        'title': 'This is an event name',
+        'thumbnail': 'https://offlinesociety.com/wp-content/uploads/2015/06/nSgE_bw-62.jpg',
+        'photo_count': '45',
+        'url': '#'
     }
 ] %}
 
 
 {# Base Template #}
-{% set activeMenu = 'photos' %}
+{% set activeMenu = '' %}
 {% extends '_base.html' %}
 
 {# Data #}
@@ -70,32 +70,18 @@ These are the matches for the thing
 {% block content %}
 <div class="row">
    <div class="event-filters">
-    <h1>Memories from
-    <div class="event-filter">all events</div>
+    <h1>We curate gatherings for the romantically unattached who appreciate the value of chemistry and conversation</div>
     </h1>
     </div>
     <div class="row">
-        {% for item in galleries %}
-        <a class="gallery__item columns large-6 small-12" href="{{item.url}}">
-            <img class="gallery__thumbnail" src="{{item.thumbnail}}">
-            <div class="gallery__title">{{item.title}}</div>
-            <div class="gallery__count">{{item.photo_count}} photos</div>
-        {% endfor %}
-        </a>
+      <div class="columns large-5">
+       <p>Feel torn between the magic of meet-cutes and the convenience of dating apps? Join the Offline Society and capture the best of both worlds.</p>
+        <p>But there’s a catch. The invite lists are created by the members themselves.</p>
+    <p>We’ll send you potential matches every week and you’ll tell us who you’d actually want to meet at an Offline Society event.  Invites to in-person experiences are curated based on mutual interest between members.</p>
+
+    <p>Stop swiping and join us offline. The real world suits you.</p>
     </div>
-</div>
-<div class="row event__pagination">
-    <ul class="pagination">
-      <li class="arrow unavailable"><a href="">&laquo;</a></li>
-      <li class="current"><a href="">1</a></li>
-      <li><a href="">2</a></li>
-      <li><a href="">3</a></li>
-      <li><a href="">4</a></li>
-      <li class="unavailable"><a href="">&hellip;</a></li>
-      <li><a href="">12</a></li>
-      <li><a href="">13</a></li>
-      <li class="arrow"><a href="">&raquo;</a></li>
-    </ul>
+    </div>
 </div>
 {% endblock %}
 

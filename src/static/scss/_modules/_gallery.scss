@@ -1,0 +1,66 @@
+.gallery__item {
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.gallery__thumbnail {
+    max-width: 100% !important;
+    height: auto;
+    box-shadow: 0.6rem 0.6rem 0px 0px #eee;
+    transition: all 350ms ease-out;
+
+    &:hover {
+        box-shadow: 1.2rem 1.2rem 0px 0px rgba(#eee,1);
+        transform: translate(-5px,-5px);
+        transition: all 350ms ease-out;
+    }
+}
+
+.gallery__title {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    line-height: 1.5;
+    width: 80%;
+    color: $black;
+    transition: all 350ms ease-out;
+}
+
+.gallery__count {
+    color: $dark-gray;
+    padding-top: 0;
+    margin-top: -.5rem;
+    transition: all 350ms ease-out;
+}
+
+// Hover state for gallery
+.gallery__item:hover {
+        .gallery__title {
+            color: $red;
+            transform: translateY(7px);
+            transition: all 350ms ease-out;
+        }
+        .gallery__count {
+            transform: translateY(7px);
+            transition: all 350ms ease-out;
+        }
+        .gallery__thumbnail {
+             box-shadow: 1.2rem 1.2rem 0px 0px rgba(#eee,1);
+            transform: translate(-5px,-5px);
+            transition: all 350ms ease-out;
+        }
+    }
+
+.gallery-photo {
+    filter: grayscale(100%);
+    transition: all 350ms ease-out;
+    transform: scale(1);
+
+    &:hover {
+        transform: scale(1.2);
+        transition: all 350ms ease-out;
+    }
+}

@@ -5,8 +5,8 @@ PAGE HEADER
 .header {
 
   z-index: 200;
-  @include span(70);
-  @include prefix(30);
+  @include span(72);
+  @include prefix(28);
   //position: fixed;
   top: 0;
  // background: $white;
@@ -27,9 +27,10 @@ Header Logo Block
 .logo {
   float: left;
   position: fixed;
-  left: 5%;
+  left: 3%;
   top: 2rem;
-  width: 20%;
+  width: 17vw;
+  min-width: 130px;
   @media screen and (max-width: 767px) {
     position: static;
     margin: 0 auto;
@@ -94,8 +95,10 @@ Main Menu
 .nav {
   list-style: none;
   height: 100px;
-  border-bottom: 2px dotted rgba($gray,.5);
+  //border-bottom: 2px dotted rgba($gray,.5);
   margin-right: 3rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
 
   h1 {
     padding-top: 1.2rem;
@@ -134,7 +137,8 @@ Main Menu
   float: left;
   margin-right: 55px;
   list-style: none;
-  padding-bottom: 2em;
+  padding-bottom: 0;
+
   @media screen and (max-width: 767px) {
     display: block;
     margin-right: 0;
@@ -162,7 +166,10 @@ Main Menu
   }
 }
 
-.nav-active:after {
+.nav-active a {
+  color: $red;
+}
+/*.nav-active:after {
   display: block;
   position: absolute;
   bottom: .8em;
@@ -172,7 +179,7 @@ Main Menu
   content: '';
   background: $red;
 
-}
+}*/
 
 .cta-wrapper {
    @media screen and (max-width:1023px) {

@@ -1,15 +1,15 @@
 /* =================================================================
                               TYPOGRAPHY
-==================================================================== 
+====================================================================
   This partial controls all global typographic styles, spacing, and heirarchy
   for your app/site.  Individualized or customized styles should be avoided,
   (ie - page/section specific type styles).  If you must do this,
-  place them in the respective SCSS partial for that page/section.  
+  place them in the respective SCSS partial for that page/section.
 */
 
 
 /* ====================== Table of Contents =========================
-1) Variables 
+1) Variables
       a) Default
       b) Secondary Fontstack
       c) Font Weights
@@ -30,7 +30,7 @@
 ====================================================================
 2.  VARIABLES
 ==================================================================== */
-  /* 
+  /*
   Text Colors
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
   $headingColor: $black;
@@ -43,10 +43,10 @@
   $codeBackgroundColor: #F5F4F2;
 
 
-  /* 
+  /*
   Fonts/Typefaces
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  // Add typefaces here. 
+  // Add typefaces here.
   // Add weight and style details too.
   // ! Set cap height to set to the baseline.
   $bodytype: (
@@ -72,18 +72,18 @@
     cap-height: 0.68
   );
 
-      /* 
+      /*
       Fonts Sizes
       –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 
 
 
-      /* 
+      /*
       2a) FontSize Mixin
-      –––––––––––––––––––––––––––––––––––––––––––––––––– 
+      ––––––––––––––––––––––––––––––––––––––––––––––––––
        There are two ways to size your typograhy:
-       (*)  "fontSizes" allows you to set available 
+       (*)  "fontSizes" allows you to set available
               type sizes manually
       */
 
@@ -102,14 +102,14 @@
 
 
       @mixin fontSize($fontSize:default) {
-        font-size: #{map-get($fontSizes, $fontSize)}; 
+        font-size: #{map-get($fontSizes, $fontSize)};
       }
 
 
-      /* 
+      /*
       2b) TypeScale Mixin
-      –––––––––––––––––––––––––––––––––––––––––––––––––– 
-      (*)  "typeScale" uses a multiplier to create a 
+      ––––––––––––––––––––––––––––––––––––––––––––––––––
+      (*)  "typeScale" uses a multiplier to create a
               set of relative unit font sizes (ems or rems)
                see http://type-scale.com/ */
 
@@ -120,20 +120,20 @@
         color: $black;
         text-transform: uppercase;
         letter-spacing: 1px;
-     }  
+     }
 
      @mixin type__default {
         font-family: map-get($bodytype, font-family);
         font-weight: map-get($bodytype, regular);
         color: $black;
-     }          
+     }
 /*
 ====================================================================
 3. STYLES
 ==================================================================== */
 
 
-/* 
+/*
 Global style defaults
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
   html {
@@ -150,7 +150,7 @@ Global style defaults
   }
 
 
-/* 
+/*
 Headers
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
   h1, h2, h3, h4, h5, h6 {
@@ -199,20 +199,22 @@ Headers
   }
 
 
-/* 
+/*
 Paragraph
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
   p {
-    @include baseline($fontsize: zeta, $font: $bodytype, $lineheight: 2, $below: 2, $breakpoint: all);
+    @include baseline($fontsize: zeta, $font: 'Avenir', $lineheight: 1.5, $below: 2, $breakpoint: all);
       -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
       -moz-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
       -ms-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
       -o-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
       font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+      color: $dark-gray;
+      max-width: 650px;
     }
 
 
-/* 
+/*
 6) Lists
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
   ul, ol {
@@ -222,13 +224,13 @@ Paragraph
   ul li, ol li {
     @include breakpoint(break-1) {
         margin-left: 0;
-    }  
+    }
     -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
     -moz-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
     -ms-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
     -o-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
     font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-    margin-left: 2rem;      
+    margin-left: 2rem;
   }
 
 
@@ -247,7 +249,7 @@ Links
   }
 
 
-/* 
+/*
 Pre-formatted/code
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
   code, pre {
@@ -271,7 +273,7 @@ Pre-formatted/code
   }
 
 
-/* 
+/*
 Bold
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
   b, strong, .bold {
@@ -279,7 +281,7 @@ Bold
   }
 
 
-/* 
+/*
 Italic
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
   em, i, .italic {
@@ -287,7 +289,7 @@ Italic
   }
 
 
-/* 
+/*
 Caption and Small Inline Text
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
   small, .caption {
@@ -316,7 +318,7 @@ Caption and Small Inline Text
   }
 
 
-/* 
+/*
 Capital Letter Styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
   .upper {
@@ -336,7 +338,7 @@ Capital Letter Styles
   }
 
 
-/* 
+/*
 Numbers
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
   // Consistent height numbers with OpenType.

@@ -1,0 +1,104 @@
+.event {
+    position: relative;
+    width: 100%;
+    color: #FFF;
+    margin-bottom: 4rem;
+    height: 400px;
+    clear: both;
+
+    &:last-child {
+        margin-bottom: 2rem;
+    }
+}
+
+.event__photo {
+    width: 85%;
+    height: auto;
+}
+
+.event__wrapper {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    height: 70%;
+    width: 35%;
+    padding: 3rem;
+    background: $red;
+    color: $white;
+    transition: all 350ms ease-out;
+    box-shadow: 0.6rem 0.6rem 0px 0px rgba(#F79FA1, 1);
+
+    &:hover {
+        color: $white;
+        box-shadow: 1.7rem 1.7rem 0px 0px rgba(#F79FA1, 1);
+        transform: translate(-10px,-10px);
+        transition: all 350ms ease-out;
+    }
+}
+
+//:nth-child(odd)
+.event {
+    .event__photo {
+        float: right;
+        padding-right: 30px;
+    }
+
+    .event__wrapper {
+        left: 0;
+    }
+
+}
+
+
+
+.event_detail {
+    line-height: 1;
+
+        text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 12px;
+    padding-top: .4rem;
+    padding-bottom: .4rem;
+    opacity: .5;
+}
+
+.event__header {
+    line-height: 1.2;
+    font-size: 2.1rem;
+    padding-bottom: 1rem;
+}
+
+
+
+
+.event-filters {
+    //background: #f7f7f7;
+    margin-top: -3rem;
+    margin-bottom: 3rem;
+}
+
+.event-filter {
+    display: inline-block;
+    padding-bottom: 4px;
+    border-bottom: 2px dotted $red-gray;
+    margin-right: .5rem;
+    color: $red-gray;
+
+    @include icon(navigate-down, after);
+
+    &:after {
+        font-size: 1.25rem;
+        padding-left: .5rem;
+        color: $red;
+    }
+}
+
+.event__pagination {
+    //@include prefix(15);
+
+    .pagination {
+        margin: 0 auto;
+        margin-bottom: 3rem;
+    }
+}
