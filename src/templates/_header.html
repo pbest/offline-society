@@ -6,7 +6,7 @@
         'url': 'events.html'
     },
     {
-        'title': 'Curation',
+        'title': 'Guestlist',
         'slug': 'curation',
         'url': 'curation.html'
     },
@@ -17,13 +17,13 @@
     }
 ] %}
 
-{# Remove this to see how the site works for non-logged in users #}
+{# Remove this to see how the site works for non-logged in users
 {% set user = {
     'first_name': 'Paul',
     'last_name': 'Best',
     'avatar': 'static/img/avatar.jpg',
     'classes': ''
-} %}
+} %} #}
 
 
 
@@ -65,11 +65,11 @@
             {% else %}
             {# Non-Member : you mean nothing to me! #}
             <li class="cta">
-                <a class="btn btn-primary btn-join" href="">Join US</a>
+                <a class="btn btn-secondary btn-join" href="">Get Started</a>
             </li>
-            <li class="cta">
+            <!--<li class="cta">
                 <a class="btn btn-secondary btn-signin" href="login.html">Sign In</a>
-            </li>
+            </li>-->
             {% endif %}
             <li class="mobileClose"><i class="ss-close"></i></li>
             <div class="clearfix"></div>
