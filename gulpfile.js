@@ -136,11 +136,11 @@ SASS -- Build stylesheets
 gulp.task('sass', () => {
   return gulp.src(config.sass.src)
     .pipe(plumber())
-    .pipe(stylelint({
+    /*.pipe(stylelint({
       syntax: 'scss',
       reporters: [ { formatter: 'string', console: true } ],
       failAfterError: false
-    }))
+    }))*/
     .pipe(sourcemaps.init())
     .pipe(sass({
       includePaths: config.sass.includePaths

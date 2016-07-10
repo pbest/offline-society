@@ -203,7 +203,7 @@ Headers
 Paragraph
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
   p {
-    @include baseline($fontsize: zeta, $font: 'Avenir', $lineheight: 1.5, $below: 2, $breakpoint: all);
+    @include baseline($fontsize: zeta, $font: $headingtype, $lineheight: 1.5, $below: 2, $breakpoint: all);
       -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
       -moz-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
       -ms-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
