@@ -1,105 +1,73 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>offlinesociety</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon-precomposed" href="/favicon-152.png">
+{#
+PHOTOS
+----------------
+These are the matches for the thing
+#}
 
-        
-        <meta property="og:title" content="" />
-        <meta property="og:site_name" content="" />
-        <meta property="og:url" content="" />
-        <meta property="og:description" content="" />
-        <meta property="fb:app_id" content="">
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="" />
-
-        
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:site" content="">
-        <meta name="twitter:creator" content="">
-        <meta name="twitter:title" content="">
-        <meta name="twitter:description" content="">
-        <meta name="twitter:image" content="">
-
-        
-        <script src="https://use.typekit.net/qhs2xrr.js"></script>
-        <script>try{Typekit.load({ async: true });}catch(e){}</script>
-
-        
-        <link rel="stylesheet" href="static/css/app.css">
-
-        
-        <script src="static/js/bundle.js" async defer></script>
-    </head>
-
-
-    <body>
-        
-        
-        
-
-
-
-
-
-
-<!-- Site Header –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<header class="header">
-
-    <div class="logo">
-        <a class="logo__link" href="/" rel="home">
-            <img class="logo__image" src="static/img/logo.png">
-        </a>
-    </div>
-
-    <nav id="nav-main" class="nav-main" role="navigation">
-    <!-- Main Menu
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <div class="mobileHandle"><i class="ss-rows"></i></div>
-        <ul class="nav">
-            
-            <li class="nav-item ">
-                <a class="nav-link" href="events.html">Events</a>
-            </li>
-            
-            <li class="nav-item ">
-                <a class="nav-link" href="curation.html">Guestlist</a>
-            </li>
-            
-            <li class="nav-item ">
-                <a class="nav-link" href="photos.html">Photos</a>
-            </li>
-            
+{% set galleries = [
+    {
+        'title': 'This is an event name',
+        'thumbnail': 'https://offlinesociety.com/wp-content/uploads/2015/06/nSgE_bw-62.jpg',
+        'photo_count': '45',
+        'url': '#'
+    },
+    {
+        'title': 'This is an event name',
+        'thumbnail': 'https://offlinesociety.com/wp-content/uploads/2015/06/nSgE_bw-62.jpg',
+        'photo_count': '45',
+        'url': '#'
+    },
+    {
+        'title': 'This is an event name',
+        'thumbnail': 'https://offlinesociety.com/wp-content/uploads/2015/06/nSgE_bw-62.jpg',
+        'photo_count': '45',
+        'url': '#'
+    },
+    {
+        'title': 'This is an event name',
+        'thumbnail': 'https://offlinesociety.com/wp-content/uploads/2015/06/nSgE_bw-62.jpg',
+        'photo_count': '45',
+        'url': '#'
+    },
+    {
+        'title': 'This is an event name',
+        'thumbnail': 'https://offlinesociety.com/wp-content/uploads/2015/06/nSgE_bw-62.jpg',
+        'photo_count': '45',
+        'url': '#'
+    },
+    {
+        'title': 'This is an event name',
+        'thumbnail': 'https://offlinesociety.com/wp-content/uploads/2015/06/nSgE_bw-62.jpg',
+        'photo_count': '45',
+        'url': '#'
+    },
+    {
+        'title': 'This is an event name',
+        'thumbnail': 'https://offlinesociety.com/wp-content/uploads/2015/06/nSgE_bw-62.jpg',
+        'photo_count': '45',
+        'url': '#'
+    },
+    {
+        'title': 'This is an event name',
+        'thumbnail': 'https://offlinesociety.com/wp-content/uploads/2015/06/nSgE_bw-62.jpg',
+        'photo_count': '45',
+        'url': '#'
+    }
+] %}
 
 
-            
-            
-            
-            <li class="cta">
-                <a class="btn btn-secondary btn-join" href="">Get Started</a>
-            </li>
-            <!--<li class="cta">
-                <a class="btn btn-secondary btn-signin" href="login.html">Sign In</a>
-            </li>-->
-            
-            <li class="mobileClose"><i class="ss-close"></i></li>
-            <div class="clearfix"></div>
-        </ul>
-        <div class="clearfix"></div>
-    </nav><!-- #nav -->
-</header>
-<div class="clearfix"></div>
+{# Base Template #}
+{% set activeMenu = '' %}
+{% extends '_base.html' %}
 
+{# Data #}
+{% set photos = [
+    {
+    }
+] %}
 
-        
-
-        
-        <div class="content-wrapper animatedWrapper">
-        
+{# Page Content #}
+{% block content %}
 <div class="row">
    <div class="event-filters">
     <h1>We curate gatherings for the romantically unattached who appreciate the value of chemistry and conversation</div>
@@ -115,35 +83,11 @@
     </div>
     </div>
 </div>
+{% endblock %}
 
-        </div>
-
-
-        
-        
-
-        
+{% block javascripts %}
+{{ super() }}
 <script>
     console.log('Hello, index');
 </script>
-
-
-        
-        <script type="application/ld+json">
-            {
-                "@context": "http://schema.org",
-                "@type": "Organization",
-                "name": "",
-                "url": "",
-                "logo": "",
-                "sameAs": [
-                    
-                    
-                    
-                    
-                    
-                ]
-            }
-        </script>
-    </body>
-</html>
+{% endblock %}

@@ -72,6 +72,7 @@
     cap-height: 0.68
   );
 
+  $font-family: 'brandon-grotesque', 'Brandon Grotesque', 'Avenir', 'Helvetica Neue', sans-serif;
       /*
       Fonts Sizes
       –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -115,7 +116,7 @@
 
 
      @mixin allcaps {
-        font-family: map-get($bodytype, font-family);
+        font-family: $font-family;
         font-weight: map-get($bodytype, bold);
         color: $black;
         text-transform: uppercase;
@@ -123,7 +124,7 @@
      }
 
      @mixin type__default {
-        font-family: map-get($bodytype, font-family);
+        font-family: $font-family;
         font-weight: map-get($bodytype, regular);
         color: $black;
      }
@@ -143,7 +144,7 @@ Global style defaults
   }
 
   body {
-    font-family: unquote(map-get($bodytype, font-family));
+    font-family: $font-family;
     font-style: normal;
     font-weight: map-get($bodytype, regular);
     line-height: 2rem;
@@ -161,14 +162,14 @@ Headers
     font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
 
     //color: $headingColour;
-    font-family: unquote(map-get($headingtype, font-family));
+    font-family: $font-family;
     font-style: normal;
     font-weight: 300;
   }
 
   h1, .alpha {
     @include sassline($fontsize: alpha, $font: $headingtype, $lineheight: 3, $below: 1, $breakpoint: all);
-    line-height: 4rem;
+    line-height: 1.3;
     font-weight: map-get($headingtype, light);
   }
 
@@ -337,6 +338,14 @@ Capital Letter Styles
     letter-spacing: 0.1rem;
   }
 
+ .special-link {
+  color: $red;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 12px;
+  border-bottom: 2px dotted $red-gray;
+ }
 
 /*
 Numbers

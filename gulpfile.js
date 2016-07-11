@@ -334,7 +334,7 @@ gulp.task('minify:js', () => {
 Workflow Tasks:
 */
 gulp.task('build', (done) => {
-  runSequence('clean', ['browserify', 'nunjucks', 'iconfont', 'sass', 'extras'], 'critical', done)
+  runSequence('clean', ['browserify', 'nunjucks', 'iconfont', 'sass', 'extras'], done)
 })
 
 gulp.task('build:production', (done) => {

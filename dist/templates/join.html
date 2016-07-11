@@ -1,0 +1,146 @@
+{#
+EVENTS
+----------------
+These are the matches for the thing
+#}
+
+{# Base Template #}
+{% set activeMenu = 'events' %}
+{% extends '_base.html' %}
+
+{# Data #}
+{
+] %}
+
+{% block header %}
+{% endblock %}
+
+{# Page Content #}
+{% block content %}
+</div>
+<div class="join--wrapper text-align-center">
+<i class="icon--arrow-left"></i> Why Join?
+<div class="row">
+    <div class="avatar avatar-large center-block m-b-0 m-t" style="background-image:url('https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/11238231_800284865695_6251841854609742614_n.jpg?oh=fb26fbad1b1f20d27abf83d6922fd737&oe=57F799C7')">
+    </div>
+</div>
+<!--<div class="join--name">Hey there, Rebecca!</div>-->
+    <div class="event-filters m-t-0">
+    <h1>I'm a
+    {# ------------- Begin dropdown ------------------#}
+    <div class="drop-target drop-fancyText drop-radio">
+        {# These are the values of the dropdown #}
+        {% set genderDropDown = [
+            {
+                'label': 'woman',
+                'active': false,
+                'value': 'woman'
+            },
+             {
+                'label': 'man',
+                'active': true,
+                'value': 'woman'
+            },
+             {
+                'label': 'other',
+                'active': false,
+                'value': 'woman'
+            }
+        ] %}
+
+        {# Loop through the dropdown to see what is active.  Put that in the label to reflect current state #}
+        {% for item in genderDropDown %}
+         {% if item.active == true %} {{item.label}}
+           {% else %}  {# If nothing is active, what do you say? #}
+          {% endif %}
+        {% endfor %}
+        <div class="drop-content-hider" id="drop-gender">
+             <ul class="drop-list">
+             {# Now we create the dropdown list #}
+             {% for item in genderDropDown %}
+                <li><input class="drop-list-item" type="radio" name="gender" {% if item.active == true %}checked="checked"{% endif %}>{{item.label}}</li>
+             {% endfor %}
+             </ul>
+        </div>
+    </div>
+    {# ------------- End dropdown ------------------#}
+
+    interested in
+
+    {# ------------- Begin dropdown ------------------#}
+    <div class="drop-target drop-fancyText">
+    {# These are the values of the dropdown #}
+    {% set orientationDropDown = [
+        {
+            'label': 'women',
+            'active': true,
+            'value': 'women'
+        },
+         {
+            'label': 'men',
+            'active': false,
+            'value': 'men'
+        },
+         {
+            'label': 'both',
+            'active': false,
+            'value': 'both'
+        }
+    ] %}
+    {# Loop through the dropdown to see what is active.  Put that in the label to reflect current state #}
+    {% for gender in genderDropDown %}
+          {% if gender.active == true %} {{gender.label}}
+          {% else %} {# If nothing is active, what do you say? #}
+          {% endif %}
+        {% endfor %}
+        <div class="drop-content-hider">
+             <ul class="drop-list">
+             {# Now we create the dropdown list #}
+             {% for gender1 in orientationDropDown %}
+                <li><input class="drop-list-item" type="radio" name="orientation" {% if gender1.active == true %}checked="checked"{% endif %}>{{gender1.label}}</li>
+             {% endfor %}
+             </ul>
+        </div>
+    </div>
+    {# ------------- End dropdown ------------------#}
+    </h1>
+    </div>
+
+
+<div class="row">
+     <div class="large-6 small-12 columns center-block">
+      <div class="field mb1">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" value="rebecca@offlinesociety.com" aria-label="First name" tabindex="2">
+      </div>
+      <div class="field field-50 mb1">
+        <label for="first_name">First Name</label>
+        <input type="text" name="first_name" id="first_name" value="Rebecca" aria-label="First name" tabindex="2">
+      </div>
+      <div class="field field-50 mb1">
+        <label for="last_name">Last Name</label>
+        <input type="text" name="last_name" id="last_name" value="Yarbrough" aria-label="First name" tabindex="2">
+      </div>
+      <div class="field mb1">
+        <label for="first_name">Birthday</label>
+        <input type="date" name="birthday" id="birthday" value="1988-10-13" aria-label="First name" tabindex="2">
+      </div>
+      <div class="field mb1">
+        <label for="first_name">How did you hear about us?</label>
+        <input type="text" name="first_name" id="first_name" placeholder="Select one" aria-label="First name" tabindex="2">
+      </div>
+    <div class="large-12 small-12 columns center-block">
+        <a class="btn m-b btn-primary" style="width:100%;" href="curation.html">Curate my guestlist</a>
+    </div>
+
+
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+{{ super() }}
+<script>
+    console.log('Hello, index');
+</script>
+{% endblock %}

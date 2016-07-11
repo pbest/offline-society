@@ -31,3 +31,30 @@ html,body {
 .span-50 {
     @include span(50);
 }
+
+.logo-block h1 a {
+  display: block;
+  background-image: url('../img/logo.png');
+  background-size: 171px 112px;
+  width: 171px;
+  height: 112px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  font-size: 20px;
+  line-height: 1.3em;
+  margin: 0 auto 25px;
+  padding: 0;
+  text-decoration: none;
+  text-indent: -9999px;
+  outline: 0;
+
+  @media screen and (min-width:768px) {
+      background-size: 264px 160px;
+      width: 264px;
+      height: 160px;
+  }
+}
+
+.drop-content-hider {
+ display: none;
+}

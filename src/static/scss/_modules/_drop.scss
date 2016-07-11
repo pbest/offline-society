@@ -1,0 +1,26 @@
+
+// all dropdown targets
+.drop-target {
+    cursor: pointer;
+}
+
+// fancy text drop
+.drop-fancyText {
+     display: inline-block;
+    padding-bottom: 4px;
+    border-bottom: 2px dotted $red-gray;
+    margin-right: .5rem;
+    color: $red-gray;
+
+    @include icon(navigate-down, after);
+
+    &:after {
+        font-size: 1.25rem;
+        padding-left: .5rem;
+        color: $red;
+    }
+
+    &:hover {
+        color: $red;
+    }
+}

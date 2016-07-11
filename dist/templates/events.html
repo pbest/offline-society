@@ -1,108 +1,93 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>offlinesociety</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon-precomposed" href="/favicon-152.png">
-
-        
-        <meta property="og:title" content="" />
-        <meta property="og:site_name" content="" />
-        <meta property="og:url" content="" />
-        <meta property="og:description" content="" />
-        <meta property="fb:app_id" content="">
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="" />
-
-        
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:site" content="">
-        <meta name="twitter:creator" content="">
-        <meta name="twitter:title" content="">
-        <meta name="twitter:description" content="">
-        <meta name="twitter:image" content="">
-
-        
-        <script src="https://use.typekit.net/qhs2xrr.js"></script>
-        <script>try{Typekit.load({ async: true });}catch(e){}</script>
-
-        
-        <link rel="stylesheet" href="static/css/app.css">
-
-        
-        <script src="static/js/bundle.js" async defer></script>
-    </head>
+{#
+EVENTS
+----------------
+These are the matches for the thing
+#}
 
 
-    <body>
-        
-        
-        
+{% set galleries = [
+    {
+        'id': 123,
+        'title': 'Gilt City x Offline Society Present: Dating in the District',
+        'image': 'https://offlinesociety.com/wp-content/uploads/2016/05/couple-riding-bike-cropped.png',
+        'date': 'July 19th',
+        'time': '6:30-8:30pm',
+        'venue': 'Bonfire',
+        'url': '#',
+        'past': true
+    },
+    {
+        'id': 234,
+        'title': 'Stiff Drinks, Hijinks and Hidden Spaces',
+        'image': 'https://offlinesociety.com/wp-content/uploads/2016/06/breather-header-photo-black-and-white1.jpeg',
+        'date': 'July 19th',
+        'time': '6:30-8:30pm',
+        'venue': 'Bonfire',
+        'url': '#',
+        'past': true
+    },
+    {
+        'id': 234,
+        'title': 'Get Sprung for Spring',
+        'image': 'https://offlinesociety.com/wp-content/uploads/2016/04/Hawthorne-DC-e1459969597122.jpg',
+        'date': 'July 19th',
+        'time': '6:30-8:30pm',
+        'venue': 'Bonfire',
+        'url': '#',
+        'past': true
+    }
+] %}
 
+{# Base Template #}
+{% set activeMenu = 'events' %}
+{% extends '_base.html' %}
 
+{# Data #}
+{% set events = [
+    {
+    }
+] %}
 
-
-
-
-<!-- Site Header –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<header class="header">
-
-    <div class="logo">
-        <a class="logo__link" href="/" rel="home">
-            <img class="logo__image" src="static/img/logo.png">
-        </a>
-    </div>
-
-    <nav id="nav-main" class="nav-main" role="navigation">
-    <!-- Main Menu
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <div class="mobileHandle"><i class="ss-rows"></i></div>
-        <ul class="nav">
-            
-            <li class="nav-item nav-active">
-                <a class="nav-link" href="events.html">Events</a>
-            </li>
-            
-            <li class="nav-item ">
-                <a class="nav-link" href="curation.html">Guestlist</a>
-            </li>
-            
-            <li class="nav-item ">
-                <a class="nav-link" href="photos.html">Photos</a>
-            </li>
-            
-
-
-            
-            
-            
-            <li class="cta">
-                <a class="btn btn-secondary btn-join" href="">Get Started</a>
-            </li>
-            <!--<li class="cta">
-                <a class="btn btn-secondary btn-signin" href="login.html">Sign In</a>
-            </li>-->
-            
-            <li class="mobileClose"><i class="ss-close"></i></li>
-            <div class="clearfix"></div>
-        </ul>
-        <div class="clearfix"></div>
-    </nav><!-- #nav -->
-</header>
-<div class="clearfix"></div>
-
-
-        
-
-        
-        <div class="content-wrapper animatedWrapper">
-        
+{# Page Content #}
+{% block content %}
     <div class="event-filters">
     <h1>Show me
-    <div class="event-filter">all events</div>
+    {# ------------- Begin dropdown ------------------#}
+    <div class="drop-target drop-fancyText">
+    {# These are the values of the dropdown #}
+    {% set eventTypeDropDown = [
+        {
+            'label': 'all events',
+            'active': true,
+            'value': 'all'
+        },
+         {
+            'label': 'events Ive RSVPed for',
+            'active': false,
+            'value': 'me'
+        },
+        {
+            'label': 'events with people on my guestlist',
+            'active': false,
+            'value': 'guests'
+        }
+    ] %}
+    {# Loop through the dropdown to see what is active.  Put that in the label to reflect current state #}
+    {% for item in eventTypeDropDown %}
+          {% if item.active == true %} {{item.label}}
+          {% else %}  {# If nothing is active, what do you say? #}
+          {% endif %}
+        {% endfor %}
+        <div class="drop-content-hider">
+             <ul class="drop-list">
+             {# Now we create the dropdown list #}
+             {% for item in eventTypeDropDown %}
+                <li><input class="drop-list-item" type="radio" name="eventType" {% if item.active == true %}checked="checked"{% endif %}>{{item.label}}</li>
+             {% endfor %}
+             </ul>
+        </div>
+    </div>
+    {# ------------- End dropdown ------------------#}
 
     on
     <div class="event-filter">any date</div></h1>
@@ -110,37 +95,17 @@
 
 
 <div class="row">
-    
-    <article class="event" id="event-123">
-        <img class="event__photo" src="https://offlinesociety.com/wp-content/uploads/2016/05/couple-riding-bike-cropped.png">
-        <a class="event__wrapper" href="#">
-         <h1 class="event__header">Gilt City x Offline Society Present: Dating in the District</h1>
-          <div class="event_detail">July 19th</div>
-          <div class="event_detail">6:30-8:30pm</div>
-          <div class="event_detail">Bonfire</div>
+    {% for item in galleries %}
+    <article class="event" id="event-{{item.id}}">
+        <img class="event__photo" src="{{item.image}}">
+        <a class="event__wrapper" href="{{item.url}}">
+         <h1 class="event__header">{{item.title}}</h1>
+          <div class="event_detail">{{item.date}}</div>
+          <div class="event_detail">{{item.time}}</div>
+          <div class="event_detail">{{item.venue}}</div>
         </a>
     </article>
-    
-    <article class="event" id="event-234">
-        <img class="event__photo" src="https://offlinesociety.com/wp-content/uploads/2016/06/breather-header-photo-black-and-white1.jpeg">
-        <a class="event__wrapper" href="#">
-         <h1 class="event__header">Stiff Drinks, Hijinks and Hidden Spaces</h1>
-          <div class="event_detail">July 19th</div>
-          <div class="event_detail">6:30-8:30pm</div>
-          <div class="event_detail">Bonfire</div>
-        </a>
-    </article>
-    
-    <article class="event" id="event-234">
-        <img class="event__photo" src="https://offlinesociety.com/wp-content/uploads/2016/04/Hawthorne-DC-e1459969597122.jpg">
-        <a class="event__wrapper" href="#">
-         <h1 class="event__header">Get Sprung for Spring</h1>
-          <div class="event_detail">July 19th</div>
-          <div class="event_detail">6:30-8:30pm</div>
-          <div class="event_detail">Bonfire</div>
-        </a>
-    </article>
-    
+    {% endfor %}
 
 </div>
 <div class="row event__pagination">
@@ -156,35 +121,11 @@
   <li class="arrow"><a href="">&raquo;</a></li>
 </ul>
 </div>
+{% endblock %}
 
-        </div>
-
-
-        
-        
-
-        
+{% block javascripts %}
+{{ super() }}
 <script>
     console.log('Hello, index');
 </script>
-
-
-        
-        <script type="application/ld+json">
-            {
-                "@context": "http://schema.org",
-                "@type": "Organization",
-                "name": "",
-                "url": "",
-                "logo": "",
-                "sameAs": [
-                    
-                    
-                    
-                    
-                    
-                ]
-            }
-        </script>
-    </body>
-</html>
+{% endblock %}

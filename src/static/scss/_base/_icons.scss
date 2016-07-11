@@ -41,11 +41,17 @@ description: [
 @function icon-char($filename) {
   $char: "";
 
-  @if $filename == close {
+  @if $filename == arrow-left {
     $char: "\E001";
   }
-  @if $filename == navigate-down {
+  @if $filename == close-circle {
     $char: "\E002";
+  }
+  @if $filename == close {
+    $char: "\E003";
+  }
+  @if $filename == navigate-down {
+    $char: "\E004";
   }
 
   @return $char;
@@ -62,6 +68,12 @@ description: [
   }
 }
 
+.icon--arrow-left {
+  @include icon(arrow-left);
+}
+.icon--close-circle {
+  @include icon(close-circle);
+}
 .icon--close {
   @include icon(close);
 }

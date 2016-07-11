@@ -1,118 +1,72 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>offlinesociety</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon-precomposed" href="/favicon-152.png">
+{#
+Matches
+----------------
+These are the matches for the thing
+#}
 
-        
-        <meta property="og:title" content="" />
-        <meta property="og:site_name" content="" />
-        <meta property="og:url" content="" />
-        <meta property="og:description" content="" />
-        <meta property="fb:app_id" content="">
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="" />
+{# Base Template #}
+{% set activeMenu = 'curation' %}
+{% extends '_base.html' %}
 
-        
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:site" content="">
-        <meta name="twitter:creator" content="">
-        <meta name="twitter:title" content="">
-        <meta name="twitter:description" content="">
-        <meta name="twitter:image" content="">
+{# Data #}
+{% set matches = [
+    {
+        'id': 459,
+        'first_name': 'John',
+        'last_name': 'Smith',
+        'avatar': 'https://randomuser.me/api/portraits/men/32.jpg',
+        'age': 27,
+        'words': 'Bold | Adventurous | Intelligent'
+    },
+    {
+        'id': 459,
+        'first_name': 'John',
+        'last_name': 'Smith',
+        'avatar': 'https://randomuser.me/api/portraits/men/39.jpg',
+        'age': 27,
+        'words': 'Bold | Adventurous | Intelligent'
+    },
+    {
+        'id': 459,
+        'first_name': 'John',
+        'last_name': 'Smith',
+        'avatar': 'https://randomuser.me/api/portraits/men/85.jpg',
+        'age': 27,
+        'words': 'Bold | Adventurous | Intelligent'
+    },
+    {
+        'id': 459,
+        'first_name': 'John',
+        'last_name': 'Smith',
+        'avatar': 'https://randomuser.me/api/portraits/men/17.jpg',
+        'age': 27,
+        'words': 'Bold | Adventurous | Intelligent'
+    },
+    {
+        'id': 459,
+        'first_name': 'John',
+        'last_name': 'Smith',
+        'avatar': 'https://randomuser.me/api/portraits/men/77.jpg',
+        'age': 27,
+        'words': 'Bold | Adventurous | Intelligent'
+    }
+] %}
 
-        
-        <script src="https://use.typekit.net/qhs2xrr.js"></script>
-        <script>try{Typekit.load({ async: true });}catch(e){}</script>
-
-        
-        <link rel="stylesheet" href="static/css/app.css">
-
-        
-        <script src="static/js/bundle.js" async defer></script>
-    </head>
-
-
-    <body>
-        
-        
-        
-
-
-
-
-
-
-<!-- Site Header –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<header class="header">
-
-    <div class="logo">
-        <a class="logo__link" href="/" rel="home">
-            <img class="logo__image" src="static/img/logo.png">
-        </a>
-    </div>
-
-    <nav id="nav-main" class="nav-main" role="navigation">
-    <!-- Main Menu
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <div class="mobileHandle"><i class="ss-rows"></i></div>
-        <ul class="nav">
-            
-            <li class="nav-item ">
-                <a class="nav-link" href="events.html">Events</a>
-            </li>
-            
-            <li class="nav-item nav-active">
-                <a class="nav-link" href="curation.html">Guestlist</a>
-            </li>
-            
-            <li class="nav-item ">
-                <a class="nav-link" href="photos.html">Photos</a>
-            </li>
-            
-
-
-            
-            
-            
-            <li class="cta">
-                <a class="btn btn-secondary btn-join" href="">Get Started</a>
-            </li>
-            <!--<li class="cta">
-                <a class="btn btn-secondary btn-signin" href="login.html">Sign In</a>
-            </li>-->
-            
-            <li class="mobileClose"><i class="ss-close"></i></li>
-            <div class="clearfix"></div>
-        </ul>
-        <div class="clearfix"></div>
-    </nav><!-- #nav -->
-</header>
-<div class="clearfix"></div>
-
-
-        
-
-        
-        <div class="content-wrapper animatedWrapper">
-        
+{# Page Content #}
+{% block content %}
 <h1 class="matches-title">At an event, I'd like to bump into...</h1>
 <div class="row">
-    
+    {% set matchCount = 1 %}
     <div class="matches">
 
        <div class="match match-center"><img src="static/img/beaker_placeholder.svg"></div>
-    
-        <div class="match match-1" id="match_459">
-            <img class="match-avatar" src="https://randomuser.me/api/portraits/men/32.jpg">
+    {% for match in matches %}
+        <div class="match match-{{matchCount}}" id="match_{{match.id}}">
+            <img class="match-avatar" src="{{match.avatar}}">
             <div class="match-details">
                 <div class="match-primaryDetails">
-                    <span class="match-firstName">John</span>
-                    <span class="match-age">27</span>
+                    <span class="match-firstName">{{match.first_name}}</span>
+                    <span class="match-age">{{match.age}}</span>
                 </div>
                 <div class="match-actions">
                     <a class="match-action match-actionNo" href="#">No</a>
@@ -120,99 +74,15 @@
                 </div>
             </div>
         </div>
-        
-    
-        <div class="match match-2" id="match_459">
-            <img class="match-avatar" src="https://randomuser.me/api/portraits/men/39.jpg">
-            <div class="match-details">
-                <div class="match-primaryDetails">
-                    <span class="match-firstName">John</span>
-                    <span class="match-age">27</span>
-                </div>
-                <div class="match-actions">
-                    <a class="match-action match-actionNo" href="#">No</a>
-                    <a class="match-action match-actionYes" href="#">Yes</a>
-                </div>
-            </div>
-        </div>
-        
-    
-        <div class="match match-3" id="match_459">
-            <img class="match-avatar" src="https://randomuser.me/api/portraits/men/85.jpg">
-            <div class="match-details">
-                <div class="match-primaryDetails">
-                    <span class="match-firstName">John</span>
-                    <span class="match-age">27</span>
-                </div>
-                <div class="match-actions">
-                    <a class="match-action match-actionNo" href="#">No</a>
-                    <a class="match-action match-actionYes" href="#">Yes</a>
-                </div>
-            </div>
-        </div>
-        
-    
-        <div class="match match-4" id="match_459">
-            <img class="match-avatar" src="https://randomuser.me/api/portraits/men/17.jpg">
-            <div class="match-details">
-                <div class="match-primaryDetails">
-                    <span class="match-firstName">John</span>
-                    <span class="match-age">27</span>
-                </div>
-                <div class="match-actions">
-                    <a class="match-action match-actionNo" href="#">No</a>
-                    <a class="match-action match-actionYes" href="#">Yes</a>
-                </div>
-            </div>
-        </div>
-        
-    
-        <div class="match match-5" id="match_459">
-            <img class="match-avatar" src="https://randomuser.me/api/portraits/men/77.jpg">
-            <div class="match-details">
-                <div class="match-primaryDetails">
-                    <span class="match-firstName">John</span>
-                    <span class="match-age">27</span>
-                </div>
-                <div class="match-actions">
-                    <a class="match-action match-actionNo" href="#">No</a>
-                    <a class="match-action match-actionYes" href="#">Yes</a>
-                </div>
-            </div>
-        </div>
-        
-    
+        {% set matchCount = matchCount + 1 %}
+    {% endfor %}
     </div>
 </div>
+{% endblock %}
 
-        </div>
-
-
-        
-        
-
-        
+{% block javascripts %}
+{{ super() }}
 <script>
     console.log('Hello, index');
 </script>
-
-
-        
-        <script type="application/ld+json">
-            {
-                "@context": "http://schema.org",
-                "@type": "Organization",
-                "name": "",
-                "url": "",
-                "logo": "",
-                "sameAs": [
-                    
-                    
-                    
-                    
-                    
-                ]
-            }
-        </script>
-    </body>
-</html>
+{% endblock %}

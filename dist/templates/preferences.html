@@ -1,105 +1,16 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>offlinesociety</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon-precomposed" href="/favicon-152.png">
+{#
+Matches
+----------------
+These are the matches for the thing
+#}
 
-        
-        <meta property="og:title" content="" />
-        <meta property="og:site_name" content="" />
-        <meta property="og:url" content="" />
-        <meta property="og:description" content="" />
-        <meta property="fb:app_id" content="">
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="" />
-
-        
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:site" content="">
-        <meta name="twitter:creator" content="">
-        <meta name="twitter:title" content="">
-        <meta name="twitter:description" content="">
-        <meta name="twitter:image" content="">
-
-        
-        <script src="https://use.typekit.net/qhs2xrr.js"></script>
-        <script>try{Typekit.load({ async: true });}catch(e){}</script>
-
-        
-        <link rel="stylesheet" href="static/css/app.css">
-
-        
-        <script src="static/js/bundle.js" async defer></script>
-    </head>
+{# Base Template #}
+{% set activeMenu = 'user' %}
+{% extends '_base.html' %}
 
 
-    <body>
-        
-        
-        
-
-
-
-
-
-
-<!-- Site Header –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<header class="header">
-
-    <div class="logo">
-        <a class="logo__link" href="/" rel="home">
-            <img class="logo__image" src="static/img/logo.png">
-        </a>
-    </div>
-
-    <nav id="nav-main" class="nav-main" role="navigation">
-    <!-- Main Menu
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <div class="mobileHandle"><i class="ss-rows"></i></div>
-        <ul class="nav">
-            
-            <li class="nav-item ">
-                <a class="nav-link" href="events.html">Events</a>
-            </li>
-            
-            <li class="nav-item ">
-                <a class="nav-link" href="curation.html">Guestlist</a>
-            </li>
-            
-            <li class="nav-item ">
-                <a class="nav-link" href="photos.html">Photos</a>
-            </li>
-            
-
-
-            
-            
-            
-            <li class="cta">
-                <a class="btn btn-secondary btn-join" href="">Get Started</a>
-            </li>
-            <!--<li class="cta">
-                <a class="btn btn-secondary btn-signin" href="login.html">Sign In</a>
-            </li>-->
-            
-            <li class="mobileClose"><i class="ss-close"></i></li>
-            <div class="clearfix"></div>
-        </ul>
-        <div class="clearfix"></div>
-    </nav><!-- #nav -->
-</header>
-<div class="clearfix"></div>
-
-
-        
-
-        
-        <div class="content-wrapper animatedWrapper">
-        
+{# Page Content #}
+{% block content %}
 <h1>Preferences</h1>
 <div class="account-wrapper">
 
@@ -203,35 +114,11 @@
                             </li></ul></div><div class="gfield_description validation_message">This field is required.</div></li><li id="field_4_56" class="gfield gfield_error gcolumn-50 gfield_contains_required field_sublabel_below field_description_below"><label class="gfield_label" for="input_4_56">How'd you hear about us?<span class="gfield_required">*</span></label><div class="ginput_container"><input name="input_56" id="input_4_56" type="text" value="" class="large" tabindex="15"></div><div class="gfield_description validation_message">This field is required.</div></li><li id="field_4_54" class="gfield gfield_error gfield_contains_required field_sublabel_below field_description_below"><label class="gfield_label" for="input_4_54">Your Profile Photo<span class="gfield_required">*</span></label><div class="ginput_container"><input type="hidden" name="MAX_FILE_SIZE" value="2097152"><input name="input_54" id="input_4_54" type="file" class="medium" aria-describedby="extensions_message" tabindex="16"><span id="extensions_message" class="screen-reader-text">Accepted file types: jpg, gif, png, jpeg.</span></div><div class="gfield_description">Pictures should be square and in jpg, jpeg or png format. </div><div class="gfield_description validation_message">This field is required.</div></li><li id="field_4_26" class="gfield gform_hidden field_sublabel_below field_description_below"><input name="input_26" id="input_4_26" type="hidden" class="gform_hidden" value=""></li>
                             </ul>-->
 </div>
+{% endblock %}
 
-        </div>
-
-
-        
-        
-
-        
+{% block javascripts %}
+{{ super() }}
 <script>
     console.log('Hello, index');
 </script>
-
-
-        
-        <script type="application/ld+json">
-            {
-                "@context": "http://schema.org",
-                "@type": "Organization",
-                "name": "",
-                "url": "",
-                "logo": "",
-                "sameAs": [
-                    
-                    
-                    
-                    
-                    
-                ]
-            }
-        </script>
-    </body>
-</html>
+{% endblock %}
