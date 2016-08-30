@@ -1,0 +1,15 @@
+.press {
+    margin: 0 auto;
+    text-align: center;
+}
+.press__item {
+    list-style: none;
+    display: inline-block;
+    //width: 20%
+    padding-right: 20px;
+    margin: 0 auto;
+
+    img {
+        max-width: 250px;
+    }
+}

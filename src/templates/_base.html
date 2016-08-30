@@ -39,23 +39,33 @@
 
         <!-- Example themes -->
         <link rel="stylesheet" href="http://github.hubspot.com/drop/docs/welcome/examples/social-sharing/css/drop-example-theme-social-sharing.css" />
+        <link rel="stylesheet" type="text/css" href="http://photoswipe.s3.amazonaws.com/pswp/dist/photoswipe.css" />
+        <link rel="stylesheet" type="text/css" href="http://photoswipe.s3.amazonaws.com/pswp/dist/default-skin/default-skin.css" />
 
         {# App javascripts #}
-        <script src="static/js/bundle.js" async defer></script>
     </head>
 
 
     <body>
-        {# Site Header #}
-        {% block header %}
-        {% include "_header.html" %}
-        {% endblock %}
+        {% block body %}
+            {# Site Header #}
+            {% block header %}
+            {% include "_header.html" %}
+            {% endblock %}
 
         {# Page Body #}
-        <div class="content-wrapper animatedWrapper">
-        {% block content %}
+            <div class="content-wrapper animatedWrapper">
+            {% block content %}
+            {% endblock %}
+            </div>
+
+
+        {% block special_content %}
         {% endblock %}
-        </div>
+
+        {% endblock %}
+
+        {% include "_footer.html" %}
 
         <div class="Overlay zIndex-Overlay" id="join-us">
             <div class="js-signin-modal Overlay-modalContainer concealed" id="signin">
@@ -100,8 +110,11 @@
         {# Structured Data for Logo and Social Profile Links #}
          <script src="http://github.hubspot.com/drop/bower_components/tether/dist/js/tether.js"></script>
          <script src="http://github.hubspot.com/drop/dist/js/drop.js"></script>
+         <script src="http://photoswipe.s3-eu-west-1.amazonaws.com/pswp/dist/photoswipe.min.js"></script>
+        <script src="http://photoswipe.s3-eu-west-1.amazonaws.com/pswp/dist/photoswipe-ui-default.min.js"></script>
+         <script src="static/js/app.js"></script>
          <Script>
-           let dropdowns = document.getElementsByClassName('drop-target')
+           var dropdowns = document.getElementsByClassName('drop-target')
           // console.log(dropdowns)
             for (var i = 0; i < dropdowns.length; i++) {
                // console.log(dropdowns[i].childNodes)

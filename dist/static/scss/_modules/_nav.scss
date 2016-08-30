@@ -1,0 +1,258 @@
+
+/*
+Main Menu
+---------------------------------------------- */
+.nav-mobileHandle {
+  position: fixed;
+  top: -2px;
+  left: -2px;
+  color: $black;
+  background: $white;
+  border: 0px dotted $gray;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  margin: 0;
+  font-size: 20px;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.nav-mobileClose {
+  //position: absolute;
+  text-align: right;
+  top: 0px;
+  right: -0px;
+  color: $white;
+  background: $black;
+  padding-right: 1.5rem;
+  padding-top: .5rem;
+  font-size: 16px;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.page-template-template-join .nav-mobileHandle {
+  display: none;
+}
+
+.handleOpen {
+   background: #000;
+  color: #FFF;
+  transform: translateX(320%);
+  -webkit-transform: translateX(320%);
+  -ms-transform: translateX(320%);
+  transition: transform .3s ease-out;
+  -ms-transition: -ms-transform .3s ease-out;
+   -webkit-transition: -webkit-transform .2s ease-out;
+  height: 100%;
+}
+
+.nav {
+  list-style: none;
+  height: 100px;
+  //border-bottom: 2px dotted rgba($gray,.5);
+  margin-right: 3rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+
+  h1 {
+    padding-top: 1.2rem;
+  }
+
+  @media screen and (max-width:767px) {
+    position: fixed;
+    height: 100%;
+    background-color: $black;
+    width: 45%;
+    left: 0;
+    top: 0;
+    z-index: 999999;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transition: transform .2s ease-out;
+    -webkit-transition: -webkit-transform .2s ease-out;
+    -ms-transition: -ms-transform .2s ease-out;
+  }
+}
+
+
+.navOpen {
+   transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transition: transform .2s ease-out;
+    -webkit-transition: -webkit-transform .2s ease-out;
+    -ms-transition: -ms-transform .2s ease-out;
+}
+
+.nav-item {
+  display: inline-block;
+  position: relative;
+  float: left;
+  margin-right: 55px;
+  list-style: none;
+  padding-bottom: 0;
+
+  @media screen and (max-width: 767px) {
+    display: block;
+    margin-right: 0;
+    float: none;
+    text-align: left;
+    margin-left: 0;
+  }
+}
+
+.nav-item a {
+  @include allcaps;
+  color: $black;
+  line-height: 5.5rem;
+
+  &:hover {
+    color: $red;
+  }
+
+  @media screen and (max-width: 767px) { //temporary
+   color: $white;
+   display: block;
+   width: 100%;
+   height: 100%;
+   padding-left: 20px;
+  }
+}
+
+.nav-active a {
+  color: $red;
+}
+
+
+.cta-wrapper {
+   @media screen and (max-width:1023px) {
+      width: 100%;
+      float: left;
+      position: fixed;
+      bottom: 20px;
+      padding-right: 40px;
+
+    }
+    @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.cta {
+  float: right;
+  position: relative;
+  line-height: 5.5rem;
+
+  @media screen and (max-width:767px) {
+     width: 100%;
+     padding-left: 0px;
+     padding-right: 20px;
+     margin: 0;
+     margin-top: 20px;
+     float: left;
+     a {
+      width: 100%;
+      margin-right: 20px;
+     }
+
+     .btn-secondary {
+      color: $white;
+      margin-top: 0px;
+      display: block;
+     }
+    }
+
+  .btn {
+    margin-left: 15px;
+    @media screen and (max-width:767px) {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+}
+
+
+/*
+User Button and Dropdown for logged in users
+---------------------------------------------- */
+.usr {
+  z-index: 200;
+}
+
+.usr__btn {
+  width: 100%;
+  // padding-top: 2.2rem;
+}
+
+.usr:hover {
+  .usr__menuIcon {
+    //opacity: 0;
+    @include transition(all, 0.2s, ease-in-out);
+  }
+
+  .usr__dropdown {
+    display: block;
+    opacity: 1;
+    @include transition(all, 0.2s, ease-in-out);
+  }
+}
+
+.usr__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 2px;
+}
+
+.usr__name {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.usr__menuIcon {
+  font-size: 90%;
+  @include transition(all, 0.2s, ease-in-out);
+}
+
+.usr__dropdown {
+  @include transition(all, 0.2s, ease-in-out);
+  display: none;
+  position: absolute;
+  width: 200px;
+  opacity: 0;
+  background: $white;
+  border: 1px solid $gray;
+  list-style: none;
+  padding-top: 0;
+  margin-top: -1rem;
+}
+
+.usr__dropdownItem {
+  padding: .5rem 1rem;
+  border-bottom: 1px solid $gray;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.landing__nav-mobile .nav-main {
+  @media screen and (min-width:768px) {
+    display: none;
+  }
+}

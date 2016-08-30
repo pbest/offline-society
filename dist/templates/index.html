@@ -1,10 +1,110 @@
 {% extends '_base.html' %}
-{% block content %}
+
+{% block body %}
+<section class="landing">
+  <div class="landing__block">
+  {# Menu #}
+    {% set menu_items = [
+        {
+            'title': 'Events',
+            'slug': 'events',
+            'url': 'events.html'
+        },
+        {
+            'title': 'Guestlist',
+            'slug': 'curation',
+            'url': 'curation.html'
+        },
+        {
+            'title': 'Photos',
+            'slug': 'photos',
+            'url': 'photos.html'
+        },
+        {
+            'title': 'About',
+            'slug': 'about',
+            'url': 'about.html'
+        }
+    ] %}
+    <ul class="landing__nav">
+       {% for item in menu_items %}
+        <li class="landing__navItem"><a href="{{item.url}}">{{item.title}}</a></li>
+       {% endfor %}
+    </ul>
+    <div class="landing__nav-mobile">
+        {% include '_nav.html' %}
+    </div>
+
+
+
+    <div class="landing__center">
+      <a href="#"><img class="landing__logo  animatedWrapper" src="https://offlinesociety.com/wp-content/themes/offline-society-theme/img/logo.png"></a>
+      <div class="landing__taglineBlock">
+          <h3 class="landing__tagline  animatedWrapper">We host local events for romantically unattached men and women</h3>
+          <a class="btn landing__taglineButton btn-dotted animatedWrapper" href="./events/">How does it work?</a>
+      </div>
+    </div>
+  </div>
+  <div class="landing__block landing__video" id="video_background">
+     <ul class="landing__ctaMenu">
+        <li class="cta"><span class="btn btn-primary btn-join js-overlay-link" id="overlay-join" data-target="join-us">Join Us</span></li>
+        <li class="cta"><span class="btn btn-secondary btn-join js-overlay-link" id="overlay-login" data-target="login" style="color:#fff">Login</span></li>
+    </ul>
+        <video class="full_video" id="theVideo" autoplay="true" poster="https://offlinesociety.com/video/poster.jpg" preload="auto" loop=""><!-- Default video source: -->
+          <source src="https://offlinesociety.com/video/offline_homepage_2.mp4" type="video/mp4">
+          <source src="https://offlinesociety.com/video/offline_homepage_2.webm" type="video/webm">
+        </video> <!--
+                Buttons or metadata go here
+              -->
+  </div>
+
+</section>
+
+<section class="landing">
+    <div class="landing__block">
+        <div class="landing__center landing__pad landing__textLeft">
+        <img src="static/img/svg/pen.svg" width="70px">
+        <h1>We send personalized event invites to you & other romantically unattached singles</h1>
+        <h6 class="red" style="padding-bottom:2em;margin-top:-1em;">Each month's events are unique & local</h6>
+       <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>-->
+        </div>
+    </div>
+    <div class="landing__block homepageInfo__visual">
+        <div class="landing__featuredEvent" style="background-image:url('http://static.parade.com/wp-content/uploads/2015/11/iStock_000061755680_Large.jpg')">
+             <div class="landing__featured-wrapper">
+            </div>
+        </div>
+        <!--<div class="landing__featuredEvent2" style="background-image:url('http://everydayfeminism.com/wp-content/uploads/2015/10/iStock_000071497637_Medium.jpg')"></div>
+        <div class="landing__featuredEvent3" style="background-image:url('https://offlinesociety.com/wp-content/uploads/2015/06/nSgE_color-42.jpg')">
+            <div class="landing__featured-wrapper">
+                <a href="#">test</a>
+            </div>
+        </div>
+        </div>-->
+        </div>
+    </div>
+</section>
+
+<section class="landing">
+    <div class="landing__block">
+        <div class="landing__center landing__pad landing__textLeft">
+         <img src="static/img/svg/emails.svg" width="70px">
+        <h1>Our weekly email lets you choose who attends your&nbsp;events</h1>
+        <ul class="text check">
+            <li>Each week you receive 5 potential matches</li>
+            <li>Choose who'd like to attend events with</li>
+            <li>Meet your matches without the messaging</li>
+        </ul>
+        </div>
+    </div>
+    <div class="landing__block homepageInfo__visual">
+        <img class="landing__curationImage" src="/static/img/homepage/curation_tool.jpg" />
+    </div>
+</section>
+<section class="landingPress center">
+<a class="btn btn-primary btn-dotted" style="transform:scale(1.5);margin-top:3rem;margin-bottom:3rem">Get started – Join with Facebook</a>
+</section>
+</div>
 {% endblock %}
 
-{% block javascripts %}
-{{ super() }}
-<script>
-    console.log('Hello, index');
-</script>
-{% endblock %}
+

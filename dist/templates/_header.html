@@ -14,17 +14,21 @@
         'title': 'Photos',
         'slug': 'photos',
         'url': 'photos.html'
+    },
+    {
+        'title': 'About',
+        'slug': 'about',
+        'url': 'about.html'
     }
 ] %}
 
-{# Remove this to see how the site works for non-logged in users
-{% set user = {
+{# Remove this to see how the site works for non-logged in users #}
+{#% set user = {
     'first_name': 'Paul',
     'last_name': 'Best',
     'avatar': 'static/img/avatar.jpg',
     'classes': ''
-} %}
-#}
+} %#}
 
 <!-- Site Header –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <header class="header">
@@ -35,49 +39,10 @@
         </a>
     </div>
 
-    <nav id="nav-main" class="nav-main" role="navigation">
     <!-- Main Menu
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        {% block nav %}
-        <div class="mobileHandle"><i class="ss-rows"></i></div>
-        <ul class="nav">
-            {% for item in menu_items %}
-            <li class="nav-item {% if item.slug == activeMenu %}nav-active{% endif %}">
-                <a class="nav-link" href="{{item.url}}">{{item.title}}</a>
-            </li>
-            {% endfor %}
-
-
-            {# Right-side Menu (CTA) #}
-            {% if user %}
-            {# They're a member!! #}
-                <li class="cta usr">
-                  <a class="usr__btn btn btn-transparent" href="#">
-                        <img class="usr__avatar" src="{{user.avatar}}">
-                        <span class="usr__name">{{user.first_name}}</span>
-                        <i class="usr__menuIcon icon--navigate-down red"></i>
-                </a>
-                <ul class="usr__dropdown">
-                    <li class="usr__dropdownItem"><a href="./settings.html">Settings</a>
-                    <li class="usr__dropdownItem"><a href="#">Logout</a>
-                </ul>
-                </li>
-            {% else %}
-            {# Non-Member : you mean nothing to me! #}
-            <li class="cta">
-            <span class="btn btn-secondary btn-join js-overlay-link" id="overlay-login" data-target="login">Login</span>
-            <span class="btn btn-primary btn-join js-overlay-link" id="overlay-join" data-target="join-us">Join Us</span>
-
-            </li>
-            <!--<li class="cta">
-                <a class="btn btn-secondary btn-signin" href="login.html">Sign In</a>
-            </li>-->
-            {% endif %}
-            <li class="mobileClose"><i class="ss-close"></i></li>
-            <div class="clearfix"></div>
-        </ul>
-        <div class="clearfix"></div>
-    </nav><!-- #nav -->
+    {% block nav %}
+    {% include '_nav.html' %}
     {% endblock %}
 </header>
 <div class="clearfix"></div>

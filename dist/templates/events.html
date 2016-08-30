@@ -90,7 +90,43 @@ These are the matches for the thing
     {# ------------- End dropdown ------------------#}
 
     on
-    <div class="event-filter">any date</div></h1>
+  {# ------------- Begin dropdown ------------------#}
+    <div class="drop-target drop-fancyText">
+    {# These are the values of the dropdown #}
+    {% set eventTypeDropDown = [
+        {
+            'label': 'any date',
+            'active': true,
+            'value': 'all'
+        },
+         {
+            'label': 'events Ive RSVPed for',
+            'active': false,
+            'value': 'me'
+        },
+        {
+            'label': 'events with people on my guestlist',
+            'active': false,
+            'value': 'guests'
+        }
+    ] %}
+    {# Loop through the dropdown to see what is active.  Put that in the label to reflect current state #}
+    {% for item in eventTypeDropDown %}
+          {% if item.active == true %} {{item.label}}
+          {% else %}  {# If nothing is active, what do you say? #}
+          {% endif %}
+        {% endfor %}
+        <div class="drop-content-hider">
+             <ul class="drop-list">
+             {# Now we create the dropdown list #}
+             {% for item in eventTypeDropDown %}
+                <li><input class="drop-list-item" type="radio" name="eventType" {% if item.active == true %}checked="checked"{% endif %}>{{item.label}}</li>
+             {% endfor %}
+             </ul>
+        </div>
+    </div>
+    {# ------------- End dropdown ------------------#}
+</h1>
     </div>
 
 

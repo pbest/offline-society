@@ -1,0 +1,25 @@
+.homepageInfo {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.homepageInfo__block {
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+.homepageInfo__visual {
+    float: left;
+    width: 50%;
+    height: 100%;
+    background: #F7F7F7;
+    text-align: center;
+
+    @media screen and (max-width:$breakpoint-small) {
+        //float: none;
+        width: 100%;
+        height: 50%;
+    }
+}

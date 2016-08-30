@@ -1,0 +1,43 @@
+ <!-- Main Menu
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <nav id="nav-main" class="nav-main" role="navigation">
+        <div id="js-navOpen" class="nav-mobileHandle"><i class="icon--hamburger"></i></div>
+        <ul class="nav">
+            <div id="js-navClose" class="nav-mobileClose"><i class="icon--close"></i></div>
+            {% for item in menu_items %}
+            <li class="nav-item {% if item.slug == activeMenu %}nav-active{% endif %}">
+                <a class="nav-link" href="{{item.url}}">{{item.title}}</a>
+            </li>
+            {% endfor %}
+
+
+            {# Right-side Menu (CTA) #}
+            {% if user %}
+            {# They're a member!! #}
+                <li class="cta usr">
+                  <a class="usr__btn btn btn-transparent" href="#">
+                        <img class="usr__avatar" src="{{user.avatar}}">
+                        <span class="usr__name">{{user.first_name}}</span>
+                        <i class="usr__menuIcon icon--navigate-down red"></i>
+                </a>
+                <ul class="usr__dropdown">
+                    <li class="usr__dropdownItem"><a href="./settings.html">Settings</a>
+                    <li class="usr__dropdownItem"><a href="#">Logout</a>
+                </ul>
+                </li>
+            {% else %}
+            {# Non-Member : you mean nothing to me! #}
+            <li class="cta">
+            <span class="btn btn-secondary btn-join js-overlay-link" id="overlay-login" data-target="login">Login</span>
+            <span class="btn btn-primary btn-join js-overlay-link" id="overlay-join" data-target="join-us">Join Us</span>
+
+            </li>
+            <!--<li class="cta">
+                <a class="btn btn-secondary btn-signin" href="login.html">Sign In</a>
+            </li>-->
+            {% endif %}
+            <li class="mobileClose"><i class="ss-close"></i></li>
+            <div class="clearfix"></div>
+        </ul>
+        <div class="clearfix"></div>
+    </nav><!-- #nav -->

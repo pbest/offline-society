@@ -38,7 +38,7 @@ const PROJECT_NAME = 'offline-society'
 const BANNER = fs.readFileSync('banner.txt', 'utf8').replace('@date', (new Date()))
 const CONFIG = require('./config').get()
 const COMPATIBILITY = ['last 2 versions', 'Firefox ESR', 'not ie <= 10']  // see https://github.com/ai/browserslist#queries
-const EXTRAS_GLOB = 'src/**/*.{txt,json,xml,ico,jpeg,jpg,png,gif,svg,ttf,otf,eot,woff,woff2}'
+const EXTRAS_GLOB = 'src/**/*.{txt,json,xml,ico,jpeg,jpg,png,gif,svg,ttf,otf,eot,woff,woff2,js}'
 
 /*
 -------------------------------------------------------------------------------------------------

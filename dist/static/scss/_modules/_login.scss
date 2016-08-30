@@ -1,0 +1,78 @@
+/* =================================================================
+                             LOGIN SCREEN
+====================================================================  */
+
+.login {
+  background: #fff;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+#login {
+  padding: 5% 0 0;
+    -webkit-animation: fadeDown 0.5s ease-out; /* Safari 4+ */
+  -moz-animation:    fadeDown 0.5s ease-out; /* Fx 5+ */
+  -o-animation:      fadeDown 0.5s ease-out; /* Opera 12+ */
+  animation:         fadeDown 0.5s ease-out; /* IE 10+, Fx 29+ */
+}
+
+
+
+.login--exit a {
+  display: block;
+  font-size: 1.75rem;
+  padding-top: 1rem;
+  padding-right: 1rem;
+  color: $black;
+}
+
+.login--actions {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.login--or {
+  //width: 100%;
+  text-align: center;
+  border-bottom: 2px dotted $gray;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  span {
+    border: 2px dotted $gray;
+    background: $white;
+    padding: .5rem;
+    border-radius: 50%;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: $red-gray;
+   position: relative;
+   top: 1rem;
+  }
+}
+
+.login--facebook {
+  //border: 2px solid $gray;
+  color: #3b5998 !important;;
+  width: 100%;
+  background-color: transparent !important;
+  border: 0 !important;
+}
+
+.login--action {
+  width: 100%;
+}
+
+.login--forgotInstructions {
+  margin-top: 3.5rem;
+  padding-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  //border-top: 2px dotted $gray;
+  text-align: center;
+}
