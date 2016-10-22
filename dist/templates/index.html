@@ -1,38 +1,112 @@
-{% extends '_base.html' %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>offlinesociety</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon-precomposed" href="/favicon-152.png">
 
-{% block body %}
+        
+        <meta property="og:title" content="" />
+        <meta property="og:site_name" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:description" content="" />
+        <meta property="fb:app_id" content="">
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="" />
+
+        
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="">
+        <meta name="twitter:creator" content="">
+        <meta name="twitter:title" content="">
+        <meta name="twitter:description" content="">
+        <meta name="twitter:image" content="">
+
+        
+        <script src="https://use.typekit.net/qhs2xrr.js"></script>
+        <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+        
+        <link rel="stylesheet" href="static/css/app.css">
+
+         <!-- Drop themes -->
+        <link rel="stylesheet" href="http://github.hubspot.com/drop/dist/css/drop-theme-basic.css" />
+        <link rel="stylesheet" href="http://github.hubspot.com/drop/dist/css/drop-theme-arrows-bounce-dark.css" />
+        <link rel="stylesheet" href="http://github.hubspot.com/drop/dist/css/drop-theme-hubspot-popovers.css" />
+
+        <!-- Example themes -->
+        <link rel="stylesheet" href="http://github.hubspot.com/drop/docs/welcome/examples/social-sharing/css/drop-example-theme-social-sharing.css" />
+        <link rel="stylesheet" type="text/css" href="http://photoswipe.s3.amazonaws.com/pswp/dist/photoswipe.css" />
+        <link rel="stylesheet" type="text/css" href="http://photoswipe.s3.amazonaws.com/pswp/dist/default-skin/default-skin.css" />
+
+        
+    </head>
+
+
+    <body>
+        
 <section class="landing">
   <div class="landing__block">
-  {# Menu #}
-    {% set menu_items = [
-        {
-            'title': 'Events',
-            'slug': 'events',
-            'url': 'events.html'
-        },
-        {
-            'title': 'Guestlist',
-            'slug': 'curation',
-            'url': 'curation.html'
-        },
-        {
-            'title': 'Photos',
-            'slug': 'photos',
-            'url': 'photos.html'
-        },
-        {
-            'title': 'About',
-            'slug': 'about',
-            'url': 'about.html'
-        }
-    ] %}
+  
+    
     <ul class="landing__nav">
-       {% for item in menu_items %}
-        <li class="landing__navItem"><a href="{{item.url}}">{{item.title}}</a></li>
-       {% endfor %}
+       
+        <li class="landing__navItem"><a href="events.html">Events</a></li>
+       
+        <li class="landing__navItem"><a href="curation.html">Guestlist</a></li>
+       
+        <li class="landing__navItem"><a href="photos.html">Photos</a></li>
+       
+        <li class="landing__navItem"><a href="about.html">About</a></li>
+       
     </ul>
     <div class="landing__nav-mobile">
-        {% include '_nav.html' %}
+         <!-- Main Menu
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <nav id="nav-main" class="nav-main" role="navigation">
+        <div id="js-navOpen" class="nav-mobileHandle"><i class="icon--hamburger"></i></div>
+        <ul class="nav">
+            <div id="js-navClose" class="nav-mobileClose"><i class="icon--close"></i></div>
+            
+            <li class="nav-item ">
+                <a class="nav-link" href="events.html">Events</a>
+            </li>
+            
+            <li class="nav-item ">
+                <a class="nav-link" href="curation.html">Guestlist</a>
+            </li>
+            
+            <li class="nav-item ">
+                <a class="nav-link" href="photos.html">Photos</a>
+            </li>
+            
+            <li class="nav-item ">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            
+
+
+            
+            
+            
+            <li class="cta">
+            <span class="btn btn-secondary btn-join js-overlay-link" id="overlay-login" data-target="login">Login</span>
+            <span class="btn btn-primary btn-join js-overlay-link" id="overlay-join" data-target="join-us">Join Us</span>
+
+            </li>
+            <!--<li class="cta">
+                <a class="btn btn-secondary btn-signin" href="login.html">Sign In</a>
+            </li>-->
+            
+            <li class="mobileClose"><i class="ss-close"></i></li>
+            <div class="clearfix"></div>
+        </ul>
+        <div class="clearfix"></div>
+    </nav><!-- #nav -->
+
     </div>
 
 
@@ -105,6 +179,95 @@
 <a class="btn btn-primary btn-dotted" style="transform:scale(1.5);margin-top:3rem;margin-bottom:3rem">Get started – Join with Facebook</a>
 </section>
 </div>
-{% endblock %}
 
 
+        <footer class="content-wrapper footer">
+    <div class="footer-links">
+        <h6>About</h6>
+        <a href="#">About Us</a>
+        <a href="#">Membership</a>
+        <a href="#">FAQ</a>
+    </div>
+    <div class="footer-links">
+        <h6>Contact</h6>
+        <a href="#">Get in Touch</a>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+    </div>
+    <div class="footer-links">
+        <h6>Privacy</h6>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Report Someone</a>
+        <a href="#">Terms of Use</a>
+    </div>
+</footer>
+
+
+        <div class="Overlay zIndex-Overlay" id="join-us">
+            <div class="js-signin-modal Overlay-modalContainer concealed" id="signin">
+                <div class="display-table width-100 height-100">
+                    <div class="display-tableCell verticalAlign-middle padding-m">
+                      <div class="modal modal--s text-align-center">
+                      <i class="icon--close-circle modal-close js-overlay-close"></i>
+                      <img class="p-b" src="static/img/beaker_placeholder.svg">
+                        <h1>Become a member to curate your guestlist</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tem  ut labore et dolore magna aliqua.</p>
+
+                        <a class="btn m-b btn-primary btn-facebook" href="join.html">Join with Facebook</a>
+                        <a class="special-link full-width">What is Membership?</a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="Overlay zIndex-Overlay" id="login">
+            <div class="js-signin-modal Overlay-modalContainer concealed">
+                <div class="display-table width-100 height-100">
+                    <div class="display-tableCell verticalAlign-middle padding-m">
+                      <div class="modal modal--s text-align-center">
+                      <i class="icon--close-circle modal-close js-overlay-close"></i>
+                      <img class="p-b" src="static/img/beaker_placeholder.svg">
+                        <h1>Good to see you again!</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tem  ut labore et dolore magna aliqua.</p>
+
+                        <a class="btn m-b btn-primary btn-facebook">Login with Facebook</a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        
+        
+        
+
+        
+         <script src="http://github.hubspot.com/drop/bower_components/tether/dist/js/tether.js"></script>
+         <script src="http://github.hubspot.com/drop/dist/js/drop.js"></script>
+         <script src="http://photoswipe.s3-eu-west-1.amazonaws.com/pswp/dist/photoswipe.min.js"></script>
+        <script src="http://photoswipe.s3-eu-west-1.amazonaws.com/pswp/dist/photoswipe-ui-default.min.js"></script>
+         <script src="static/js/app.js"></script>
+         <Script>
+
+
+         </Script>
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "Organization",
+                "name": "",
+                "url": "",
+                "logo": "",
+                "sameAs": [
+                    
+                    
+                    
+                    
+                    
+                ]
+            }
+        </script>
+    </body>
+</html>

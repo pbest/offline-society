@@ -7,21 +7,22 @@
         var className = 'activated'
 
         for (var i = 0; i < overlays.length; i++) {
-            var overlay = overlays[i]
-            //console.log(overlay)
-            var modal = document.getElementById(overlay.getAttribute('data-target'))
-            overlay.addEventListener("click", function(){
-                var el = modal
-                //var className = 'activated'
-                el.classList.add(className)
-                //console.log(el)
+            var thisOverlayLink = overlays[i]
+
+            //console.log(modal);
+            thisOverlayLink.addEventListener("click", function() {
+                //var el = modal
+                console.log(this);
+
+                var targetOverlayID = this.getAttribute('data-target')
+                var thisModal = document.getElementById(targetOverlayID)
+                thisModal.classList.add(className)
             }, false);
         }
-        //console.log(close);
         for (var i = 0; i < close.length; i++) {
             close[i].addEventListener("click", function(){
                 var parentEl = findAncestor(this,'Overlay');
-                //console.log(this)
+                console.log(parentEl)
                 parentEl.classList.remove(className)
             }, false);
         }
@@ -30,6 +31,29 @@
             while ((el = el.parentElement) && !el.classList.contains(cls));
             return el;
         }
+
+/* ------------------------------------
+   DROPDOWN
+   ------------------------------------ */
+ var dropdowns = document.getElementsByClassName('drop-target')
+          // console.log(dropdowns)
+            for (var i = 0; i < dropdowns.length; i++) {
+               // console.log(dropdowns[i].childNodes)
+                var drop = new Drop({
+                    target: dropdowns[i],
+                    content: dropdowns[i].getElementsByClassName('drop-content-hider')[0].innerHTML,
+                    classes: 'drop-theme-arrows-bounce-dark drop-hero',
+                    attach: 'bottom left',
+                    openOn: 'click'
+                });
+
+                drop.on(close, function(){
+                 console.log("test");
+                //var parentEl = findAncestor(this,'Overlay');
+                //console.log(this)
+                //this.classList.add(matchClass)
+                });
+            }
 
  /* ------------------------------------
     MOBILE NAV
