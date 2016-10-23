@@ -36,10 +36,6 @@
     padding-top: .5rem;
     padding-left: .5rem;
     display: block;
-
-    &:hover {
-        color: $black;
-    }
 }
 
 .drop-list-item-active {
@@ -62,7 +58,7 @@
     background: #fff !important;
     color: #000 !important;
 
-    &:before {
+    &::before {
         border-bottom-color: #fff !important;
     }
 }
