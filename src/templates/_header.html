@@ -1,6 +1,11 @@
 {# Menu #}
 {% set menu_items = [
     {
+        'title': 'How it works',
+        'slug': 'about',
+        'url': 'about.html'
+    },
+    {
         'title': 'Events',
         'slug': 'events',
         'url': 'events.html'
@@ -14,21 +19,17 @@
         'title': 'Photos',
         'slug': 'photos',
         'url': 'photos.html'
-    },
-    {
-        'title': 'About',
-        'slug': 'about',
-        'url': 'about.html'
     }
 ] %}
 
 {# Remove this to see how the site works for non-logged in users #}
-{#% set user = {
+{% set user = {
+    'user_id': 345,
     'first_name': 'Paul',
     'last_name': 'Best',
     'avatar': 'static/img/avatar.jpg',
     'classes': ''
-} %#}
+} %}
 
 <!-- Site Header –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <header class="header">

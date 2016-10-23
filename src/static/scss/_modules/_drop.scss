@@ -24,3 +24,28 @@
         color: $red;
     }
 }
+
+.drop-list li {
+    list-style: none;
+}
+
+.drop-list-item {
+    color: $white;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    padding-bottom: .5rem;
+    padding-top: .5rem;
+    display: block;
+}
+
+.drop-list-item-active {
+    @include icon(check,after);
+
+    &:after {
+        font-size: 70%;
+
+        color: $red;
+        margin-left: 10px;
+        position: relative;
+        top: 2px;
+    }
+}

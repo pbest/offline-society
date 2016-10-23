@@ -82,7 +82,7 @@ These are the matches for the thing
              <ul class="drop-list">
              {# Now we create the dropdown list #}
              {% for item in eventTypeDropDown %}
-                <li><input class="drop-list-item" type="radio" name="eventType" {% if item.active == true %}checked="checked"{% endif %}>{{item.label}}</li>
+                <li><a class="drop-list-item js-sync {% if item.active == true %}drop-list-item-active{% endif %}" href="events.html">{{item.label}}</a></li>
              {% endfor %}
              </ul>
         </div>
@@ -120,7 +120,7 @@ These are the matches for the thing
              <ul class="drop-list">
              {# Now we create the dropdown list #}
              {% for item in eventTypeDropDown %}
-                <li><input class="drop-list-item" type="radio" name="eventType" {% if item.active == true %}checked="checked"{% endif %}>{{item.label}}</li>
+             <li><a class="drop-list-item js-sync {% if item.active == true %}drop-list-item-active{% endif %}" href="events.html">{{item.label}}</a></li>
              {% endfor %}
              </ul>
         </div>
