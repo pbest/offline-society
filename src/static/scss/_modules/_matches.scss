@@ -30,6 +30,7 @@
 
 .match {
     display: block;
+    overflow: visible;
     //overflow: hidden;
     position: absolute;
     top: 50%; left: 50%;
@@ -78,13 +79,28 @@
     text-align: center;
 }
 
+.match-wrapper {
+    transition: all 250ms ease-out;
+}
+
+.matching {
+    .match-wrapper {
+        opacity: 0;
+        transition: all 150ms ease-out;
+    }
+    .match--open .match-wrapper {
+            opacity: 1;
+            transition: all 150ms ease-out;
+        }
+
 .match--open {
+    opacity: 1 !important;
     //display: absolute;
     //top: 0;
     //left: 0;
    // width: 100%;
     //height: 100%;
-    background: white;
+    //background: white;
     z-index: 99999999;
     top: 120%;
     width: 120%;
@@ -107,6 +123,26 @@
     .match-primaryDetails {
         padding-bottom: 1rem;
     }
+}
+}
+
+.match-processed {
+    animation-name: match-processed;
+    animation-delay: 100ms;
+    animation-delay: 0;
+    animation-duration: 300ms;
+    animation-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
+    animation-fill-mode: forwards;
+}
+@keyframes match-processed {
+  0% {
+    transform: none;
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(600px);
+    opacity: 0;
+  }
 }
 
 .match-firstName {

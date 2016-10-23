@@ -139,6 +139,8 @@ These are the matches for the thing
           <div class="event_detail">{{item.date}}</div>
           <div class="event_detail">{{item.time}}</div>
           <div class="event_detail">{{item.venue}}</div>
+          <!-- only show this if there is an RSVP-->
+          <div class="event_detail event-guestlist-rsvp">Someone on your Guestlist RSVPed</div>
         </a>
     </article>
     {% endfor %}

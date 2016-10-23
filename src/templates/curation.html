@@ -57,19 +57,21 @@ These are the matches for the thing
 <h1 class="matches-title">Build your guestlist for Offline Society events</h1>
     {% set matchCount = 1 %}
     <h6 class="matches-subtitle center" style="color:#7d7d7d;opacity:.8">At an event I'd like to bump into...</h6>
-    <div class="matches">
-       <div class="match match-center"><img src="static/img/beaker_placeholder.svg"></div>
+    <div class="matches" id="js-matches">
+       <div class="match match-center"><div class="match-wrapper"><img src="static/img/beaker_placeholder.svg"></div></div>
     {% for match in matches %}
         <div class="match match-{{matchCount}}" id="match_{{match.id}}">
-            <img class="match-avatar" src="{{match.avatar}}">
-            <div class="match-details">
-                <div class="match-primaryDetails">
-                    <span class="match-firstName">{{match.first_name}}</span>
-                    <span class="match-age">(Age {{match.age}})</span>
-                </div>
-                <div class="match-actions">
-                    <span class="btn match-action match-actionNo js-match-click" data-action="no" data-user="" data-match="{{match.id}}" href="#">No</span>
-                    <a class="btn match-action match-actionYes js-match-click" href="#">Yes</a>
+            <div class="match-wrapper" id="matchWrapper_{{matchCount}}">
+                <img class="match-avatar" src="{{match.avatar}}">
+                <div class="match-details">
+                    <div class="match-primaryDetails">
+                        <span class="match-firstName">{{match.first_name}}</span>
+                        <span class="match-age">(Age {{match.age}})</span>
+                    </div>
+                    <div class="match-actions">
+                        <span class="btn match-action match-actionNo js-match-click" data-matchnum="{{matchCount}}" data-action="no" data-user="" data-match="{{match.id}}">No</span>
+                        <a class="btn match-action match-actionYes js-match-click" data-matchnum="{{matchCount}}" data-action="no" data-user="" data-match="{{match.id}}">Yes</a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -79,16 +79,33 @@ closeNav.addEventListener("click", function(){
  ------------------------------------ */
 
 var matchEls   = document.getElementsByClassName('match');
+var matchesEl   = document.getElementById('js-matches');
 var matchClass = 'match--open';
 for (var i = 0; i < matchEls.length; i++) {
 
             matchEls[i].addEventListener("click", function(){
-                console.log(this);
+               // console.log(this);
                 //var parentEl = findAncestor(this,'Overlay');
                 //console.log(this)
+                matchesEl.classList.toggle('matching')
                 this.classList.add(matchClass)
             }, false);
         }
+
+ var matchClicks = document.getElementsByClassName('js-match-click');
+ for (var i = 0; i < matchClicks.length; i++) {
+         matchClicks[i].addEventListener("click", function(){
+
+            var matchTarget = this.getAttribute('data-matchnum')
+           // console.log(matchTarget);
+            matchWrapperEl = document.getElementById('matchWrapper_' + matchTarget)
+           // console.log(matchWrapperEl);
+            //this.classList.remove('matching');
+            matchWrapperEl.classList.add('match-processed');
+            console.log(matchesEl.classList);
+            matchesEl.classList.remove('matching')
+         },false);
+ }
 
  /* ------------------------------------
     PHOTOSWIPE
