@@ -30,11 +30,16 @@
 }
 
 .drop-list-item {
-    color: $white;
-    border-bottom: 1px solid rgba(255,255,255,.1);
+    color: $dark-gray;
+    border-bottom: 1px solid rgba(0,0,0,.04);
     padding-bottom: .5rem;
     padding-top: .5rem;
+    padding-left: .5rem;
     display: block;
+
+    &:hover {
+        color: $black;
+    }
 }
 
 .drop-list-item-active {
@@ -47,5 +52,17 @@
         margin-left: 10px;
         position: relative;
         top: 2px;
+    }
+}
+
+.drop-content {
+    // override the default styles
+    box-shadow: 0 0px 40px rgba(0,0,0,.2) !important;
+    margin-top: 1.5rem !important;
+    background: #fff !important;
+    color: #000 !important;
+
+    &:before {
+        border-bottom-color: #fff !important;
     }
 }
